@@ -123,9 +123,21 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 
     container: {
+<<<<<<< HEAD
         flexGrow:1,
         backgroundColor: '#000000',
 
+=======
+
+        flexGrow:1,
+
+    },
+
+    signupText: {
+        fontSize: 30,
+
+        color:'#ffffff',
+>>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
     },
 
     buttonText: {
@@ -136,11 +148,19 @@ const styles = StyleSheet.create({
     },
 
     button: {
+<<<<<<< HEAD
         backgroundColor:'#00008b',
+=======
+        backgroundColor:'rgba(255,255,255,0.3)',
+>>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
         textAlign:'center',
+<<<<<<< HEAD
+=======
+
+>>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
         paddingVertical: 9,
         height: 40,
         width: 120,
@@ -163,9 +183,16 @@ const styles = StyleSheet.create({
     },
 
     inputBox: {
+<<<<<<< HEAD
         alignSelf:'center',
         width:300,
         backgroundColor:'rgba(255,255,255,0.3)',
+=======
+
+        width:300,
+        backgroundColor:'rgba(255,255,255,0.3)',
+
+>>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 12,
@@ -177,9 +204,17 @@ const styles = StyleSheet.create({
     registerHere: {
         flexGrow: 1,
         alignItems: 'flex-end',
+<<<<<<< HEAD
         justifyContent:'center',
         paddingVertical: 10,
         flexDirection:'row',
+=======
+
+        justifyContent:'center',
+        paddingVertical: 10,
+        flexDirection:'row',
+        marginTop:150,
+>>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
     },
 
     inputText: {
@@ -193,6 +228,10 @@ const styles = StyleSheet.create({
         fontWeight:'bold',  
     },
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
 })
 
 

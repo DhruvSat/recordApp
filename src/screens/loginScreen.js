@@ -99,20 +99,24 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
+
         flexGrow:1,
-        backgroundColor: '#000',
+        backgroundColor: '#000000',
+
     },
     
     inputBox: {
+
         alignSelf:'center',
         width:300,
         backgroundColor:'rgba(255,255,255,0.3)',
+
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 13,
         color: '#ffffff',
         marginVertical: 10,
-        textAlign:'left'
+        textAlign:'center'
     },
     
     buttonText: {
@@ -154,7 +158,9 @@ const styles = StyleSheet.create({
     registerButton: {
         color:'#ffffff',
         fontSize: 16,
+
         fontWeight:'bold',  
+
     },
 
     forgotButton: {
