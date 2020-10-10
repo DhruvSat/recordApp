@@ -11,7 +11,7 @@ import {
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 
-const LoginScreen = ()=>{
+const LoginScreen = ({navigation})=>{
     return(
         <View style={styles.container}>
             <ScrollView keyboardShouldPersistTaps="handled">
@@ -20,7 +20,7 @@ const LoginScreen = ()=>{
                 source={require('../../assets/logo.png')}
                 />
 
-                <TextInput style={styles.inputBox} 
+                <TextInput  style={styles.inputBox} 
                 underlinecolorAndroid='rgba(0,0,0,0)' 
                 placeholder='Email'
                 placeholderTextColor='#ffffff'
@@ -42,7 +42,7 @@ const LoginScreen = ()=>{
 
                 <View style={styles.registerHere}>
                     <Text style={styles.inputText}>Don't have an account yet? </Text>
-                    <TouchableOpacity><Text style={styles.registerButton}> Register </Text></TouchableOpacity>                                                                                   
+                    <TouchableOpacity onPress={ ()=> navigation.navigate('RegisterScreen')}><Text style={styles.registerButton}> Register </Text></TouchableOpacity>                                                                                   
                 </View>
                 {/* <View style={{flexDirection:'row'}}>
                 <TouchableOpacity>
@@ -65,16 +65,19 @@ const LoginScreen = ()=>{
 const styles = StyleSheet.create({
     container: {
         flexGrow:1,
+        backgroundColor: '#000000',
     },
     
     inputBox: {
+        alignSelf:'center',
         width:300,
         backgroundColor:'rgba(255,255,255,0.3)',
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 16,
         color: '#ffffff',
-        marginVertical: 10
+        marginVertical: 10,
+        textAlign:'center'
     },
     
     buttonText: {
@@ -115,9 +118,9 @@ const styles = StyleSheet.create({
     registerButton: {
         color:'#ffffff',
         fontSize: 16,
-        fontWeight:'bold',
-        
+        fontWeight:'bold',  
     },
+
     forgotButton: {
         fontSize:14,
         color:'#ffffff',
