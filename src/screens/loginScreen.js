@@ -73,11 +73,11 @@ const LoginScreen = ({ navigation }) => {
                         <Text style={styles.forgotButton}>Forgot Password ?</Text>
                     </TouchableOpacity>
 
-                <View style={styles.registerHere}>
-                    <Text style={styles.inputText}>Don't have an account yet? </Text>
-                    <TouchableOpacity><Text style={styles.registerButton}> Register </Text></TouchableOpacity>                                                                                   
-                </View>
-                {/* <View style={{flexDirection:'row'}}>
+                    <View style={styles.registerHere}>
+                        <Text style={styles.inputText}>Don't have an account yet? </Text>
+                        <TouchableOpacity onPress={() => onLoginPress()}><Text style={styles.registerButton}> Register </Text></TouchableOpacity>
+                    </View>
+                    {/* <View style={{flexDirection:'row'}}>
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => onLoginPress()}
@@ -109,12 +109,12 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow:1,
+        flexGrow: 1,
     },
 
     inputBox: {
-        width:300,
-        backgroundColor:'rgba(255,255,255,0.3)',
+        width: 300,
+        backgroundColor: 'rgba(255,255,255,0.3)',
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 16,
@@ -160,8 +160,8 @@ const styles = StyleSheet.create({
     registerButton: {
         color: '#ffffff',
         fontSize: 16,
-        fontWeight:'bold',
-        
+        fontWeight: 'bold',
+
     },
     forgotButton: {
         fontSize: 14,
