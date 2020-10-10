@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { firebase } from '../../firebase/config'
+import { firebase } from '../firebase/config'
 import {
     Text,
     StyleSheet,
@@ -8,8 +8,10 @@ import {
     TextInput,
     TouchableOpacity,
     ScrollView,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
+    Button
 } from 'react-native';
+
 
 
 
@@ -74,12 +76,22 @@ const LoginScreen = ({ navigation }) => {
                         <Text style={styles.forgotButton}>Forgot Password ?</Text>
                     </TouchableOpacity>
 
+                    <Button
+                        title="LOGIN"
+                        onPress={() => onLoginPress()}>
+
+                    </Button>
+
+
+
                     <View style={styles.registerHere}>
                         <Text style={styles.inputText}>Don't have an account yet? </Text>
-                        <TouchableOpacity onPress={() => onLoginPress()}><Text style={styles.registerButton}> Register </Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}><Text style={styles.registerButton}> Register </Text></TouchableOpacity>
                     </View>
 
                 </KeyboardAvoidingView>
+
+
             </ScrollView>
         </View>
     );
@@ -87,17 +99,24 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow: 1,
+
+        flexGrow:1,
+        backgroundColor: '#000000',
+
     },
 
     inputBox: {
-        width: 300,
-        backgroundColor: 'rgba(255,255,255,0.3)',
+
+        alignSelf:'center',
+        width:300,
+        backgroundColor:'rgba(255,255,255,0.3)',
+
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 16,
         color: '#ffffff',
-        marginVertical: 10
+        marginVertical: 10,
+        textAlign:'center'
     },
 
     buttonText: {
@@ -138,9 +157,11 @@ const styles = StyleSheet.create({
     registerButton: {
         color: '#ffffff',
         fontSize: 16,
-        fontWeight: 'bold',
+
+        fontWeight:'bold',  
 
     },
+
     forgotButton: {
         fontSize: 14,
         color: '#ffffff',
