@@ -9,7 +9,7 @@ import {
   StatusBar,
 } from 'react-native';
 
-import LoginScreen from './src/screens/loginScreen'
+import LoginScreen from './src/screens/LoginScreen'
 
 
 const HomeScreen = () => {
@@ -17,20 +17,20 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar
-        backgroundColor= "#000000"
-        basstyle= "light-content"
+        backgroundColor="#000000"
+        basstyle="light-content"
       />
-      <LoginScreen/>
+      <LoginScreen />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor:'#000000',
+    backgroundColor: '#000000',
     flexGrow: 1,
     alignItems: 'center',
-    justifyContent:'center'
+    justifyContent: 'center'
   }
 })
 export default HomeScreen;
