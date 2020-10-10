@@ -123,15 +123,9 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 
     container: {
-
         flexGrow:1,
+        backgroundColor: '#000000',
 
-    },
-
-    signupText: {
-        fontSize: 30,
-
-        color:'#ffffff',
     },
 
     buttonText: {
@@ -142,40 +136,50 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        backgroundColor:'rgba(255,255,255,0.3)',
+        backgroundColor:'#00008b',
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
         textAlign:'center',
-
         paddingVertical: 9,
-        height: 45,
-        marginLeft: 100,
-        marginRight: 100,
+        height: 40,
+        width: 120,
         marginTop: 20,
-        marginBottom: 20
+        marginBottom: 20,
+        alignSelf:'center'
+    },
+
+    inputBox1:{
+        marginTop:30,
+        alignSelf:'center',
+        width:300,
+        backgroundColor:'rgba(255,255,255,0.3)',
+        borderRadius: 25,
+        paddingHorizontal: 16,
+        fontSize: 12,
+        color: '#ffffff',
+        marginVertical: 10,
+        textAlign:'left'
     },
 
     inputBox: {
-
+        alignSelf:'center',
         width:300,
         backgroundColor:'rgba(255,255,255,0.3)',
-
         borderRadius: 25,
         paddingHorizontal: 16,
-        fontSize: 16,
+        fontSize: 12,
         color: '#ffffff',
-        marginVertical: 10
+        marginVertical: 10,
+        textAlign:'left'
     },
 
     registerHere: {
         flexGrow: 1,
         alignItems: 'flex-end',
-
         justifyContent:'center',
         paddingVertical: 10,
         flexDirection:'row',
-        marginTop:150,
     },
 
     inputText: {
@@ -189,7 +193,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',  
     },
     
-
 })
+
 
 export default RegisterScreen;
