@@ -1,12 +1,15 @@
 import React from 'react'
-import { firebase } from '../../firebase/config'
-import View from 'react-native'
 
-const HomeScreen = () => {
+import { View, Text } from 'react-native'
+
+const HomeScreen = ({ route, navigation }) => {
+    const { user } = route.params;
 
     return (
         <View>
-
+            <Text>Email:{user.email}</Text>
+            <Text>Name:{user.fullName}</Text>
+            <Text>Phone:{user.phone}</Text>
         </View>
     )
 

@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-import LoginScreen from './src/screens/LoginScreen'
+
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native'
 import 'react-native-gesture-handler';
@@ -29,7 +29,7 @@ function App() {
         <Stack.Screen
           name='HomeScreen'
           component={HomeScreen}
-          options={{ headerShown: false }}
+
         />
 
       </Stack.Navigator>

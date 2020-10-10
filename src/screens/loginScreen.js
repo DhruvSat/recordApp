@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { firebase } from '../../firebase/config'
+import { firebase } from '../firebase/config'
 import {
     Text,
     StyleSheet,
@@ -8,7 +8,8 @@ import {
     TextInput,
     TouchableOpacity,
     ScrollView,
-    KeyboardAvoidingView
+    KeyboardAvoidingView,
+    Button
 } from 'react-native';
 
 
@@ -74,9 +75,17 @@ const LoginScreen = ({ navigation }) => {
                         <Text style={styles.forgotButton}>Forgot Password ?</Text>
                     </TouchableOpacity>
 
+                    <Button
+                        title="LOGIN"
+                        onPress={() => onLoginPress()}>
+
+                    </Button>
+
+
+
                     <View style={styles.registerHere}>
                         <Text style={styles.inputText}>Don't have an account yet? </Text>
-                        <TouchableOpacity onPress={() => onLoginPress()}><Text style={styles.registerButton}> Register </Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}><Text style={styles.registerButton}> Register </Text></TouchableOpacity>
                     </View>
 
                 </KeyboardAvoidingView>

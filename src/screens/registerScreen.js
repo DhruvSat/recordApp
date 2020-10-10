@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { firebase } from '../../firebase/config'
+import { firebase } from '../firebase/config'
 import {
     Text,
     StyleSheet,
@@ -16,6 +16,7 @@ const RegisterScreen = ({ navigation }) => {
 
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
@@ -32,21 +33,22 @@ const RegisterScreen = ({ navigation }) => {
                 const data = {
                     id: uid,
                     email,
-                    fullName
+                    fullName,
+                    phone
                 };
 
                 const usersRefs = firebase.firestore().collection('users')
-                usersRefs.doc(email).set(data)
-                    .then(() => {
-                        navigation.navigate('HomeScreen', { user: data })
-                    })
-                    .catch((error) => {
-                        alert(error)
-                    });
-            })
-            .catch((error) => {
+                usersRefs.doc(email).set(data).then(() => {
+                    navigation.navigate('HomeScreen')
+                }).catch((error) => {
+                    alert(error)
+                });
+
+
+            }).catch((error) => {
                 alert(error)
             });
+
 
     }
 
@@ -77,6 +79,8 @@ const RegisterScreen = ({ navigation }) => {
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Mobile No.'
                         placeholderTextColor='#ffffff'
+                        onChangeText={(text) => setPhone(text)}
+                        value={phone}
                     />
 
                     <TextInput style={styles.inputBox}
