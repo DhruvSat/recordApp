@@ -52,7 +52,7 @@ const LoginScreen = ({ navigation }) => {
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                    <Image style={{ width: 250, height: 200, resizeMode: 'contain', margin: 30, marginTop: 90, marginBottom: 40 }}
+                    <Image style={{ width: 250, height: 200, resizeMode: 'contain', marginTop: 90, marginBottom: 40 ,alignSelf: 'center'}}
                         source={require('../../assets/logo.png')}
                     />
 
@@ -76,13 +76,10 @@ const LoginScreen = ({ navigation }) => {
                         <Text style={styles.forgotButton}>Forgot Password ?</Text>
                     </TouchableOpacity>
 
-                    <Button
-                        title="LOGIN"
-                        onPress={() => onLoginPress()}>
-
-                    </Button>
-
-
+                    <TouchableOpacity style={styles.button}
+                    onPress={()=>onLoginPress()}>
+                        <Text style={styles.buttonText}> LOG IN </Text>
+                    </TouchableOpacity>
 
                     <View style={styles.registerHere}>
                         <Text style={styles.inputText}>Don't have an account yet? </Text>
@@ -124,7 +121,7 @@ const styles = StyleSheet.create({
 
     button: {
         // backgroundColor:'rgba(255,255,255,0.3)',
-        backgroundColor:'#00008d.',
+        backgroundColor:'#00008d',
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
@@ -143,7 +140,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         paddingVertical: 10,
         flexDirection:'row',
-        marginTop:150,
+        marginTop:100,
     },
 
     inputText: {

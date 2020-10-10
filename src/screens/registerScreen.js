@@ -58,9 +58,9 @@ const RegisterScreen = ({ navigation }) => {
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                    <Text style={styles.signupText}>SignUp!</Text>
+                <Text style={{fontSize:25,color:'#ffffff',alignSelf:'center',marginTop:90}}>SignUp</Text>
 
-                    <TextInput style={styles.inputBox}
+                    <TextInput style={styles.inputBox1}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Name'
                         placeholderTextColor='#ffffff'
@@ -106,7 +106,7 @@ const RegisterScreen = ({ navigation }) => {
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => onRegisterPress()}>
-                        <Text style={styles.buttonText}> Register Account </Text>
+                        <Text style={styles.buttonText}> Sign Up </Text>
                     </TouchableOpacity>
 
                     <View style={styles.registerHere}>
@@ -123,30 +123,15 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 
     container: {
-<<<<<<< HEAD
-<<<<<<< HEAD
-        flexGrow:1,
-        backgroundColor: '#000000',
-
-=======
-
-=======
->>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
         flexGrow:1,
         backgroundColor: '#000000',
 
     },
 
-<<<<<<< HEAD
     signupText: {
         fontSize: 30,
-
         color:'#ffffff',
->>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
     },
-
-=======
->>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
     buttonText: {
         fontSize:15,
         fontWeight:'500',
@@ -155,33 +140,17 @@ const styles = StyleSheet.create({
     },
 
     button: {
-<<<<<<< HEAD
-<<<<<<< HEAD
         backgroundColor:'#00008b',
-=======
-        backgroundColor:'rgba(255,255,255,0.3)',
->>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
-=======
-        backgroundColor:'#00008b',
->>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
         textAlign:'center',
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
-=======
->>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
         paddingVertical: 9,
         height: 40,
-        width: 120,
+        width: 100,
         marginTop: 20,
         marginBottom: 20,
         alignSelf:'center'
-<<<<<<< HEAD
     },
 
     inputBox1:{
@@ -198,37 +167,9 @@ const styles = StyleSheet.create({
     },
 
     inputBox: {
-<<<<<<< HEAD
         alignSelf:'center',
         width:300,
         backgroundColor:'rgba(255,255,255,0.3)',
-=======
-
-=======
-    },
-
-    inputBox1:{
-        marginTop:30,
-        alignSelf:'center',
->>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
-        width:300,
-        backgroundColor:'rgba(255,255,255,0.3)',
-        borderRadius: 25,
-        paddingHorizontal: 16,
-        fontSize: 12,
-        color: '#ffffff',
-        marginVertical: 10,
-        textAlign:'left'
-    },
-
-<<<<<<< HEAD
->>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
-=======
-    inputBox: {
-        alignSelf:'center',
-        width:300,
-        backgroundColor:'rgba(255,255,255,0.3)',
->>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 12,
@@ -240,23 +181,10 @@ const styles = StyleSheet.create({
     registerHere: {
         flexGrow: 1,
         alignItems: 'flex-end',
-<<<<<<< HEAD
-<<<<<<< HEAD
+        // marginTop:150/,
         justifyContent:'center',
-        paddingVertical: 10,
+        paddingVertical: 20,
         flexDirection:'row',
-=======
-
-        justifyContent:'center',
-        paddingVertical: 10,
-        flexDirection:'row',
-        marginTop:150,
->>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
-=======
-        justifyContent:'center',
-        paddingVertical: 10,
-        flexDirection:'row',
->>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
     },
 
     inputText: {
@@ -270,13 +198,6 @@ const styles = StyleSheet.create({
         fontWeight:'bold',  
     },
     
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> ec884da322a3eaaf458690eec677a0f4a10a09df
-=======
->>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
 })
 
 
