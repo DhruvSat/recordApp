@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-import { firebase } from '../../firebase/config'
+import { firebase } from '../firebase/config'
 import {
+
     Text,
     StyleSheet,
     View,
@@ -16,6 +17,7 @@ const RegisterScreen = ({ navigation }) => {
 
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
+    const [phone, setPhone] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
@@ -32,21 +34,22 @@ const RegisterScreen = ({ navigation }) => {
                 const data = {
                     id: uid,
                     email,
-                    fullName
+                    fullName,
+                    phone
                 };
 
                 const usersRefs = firebase.firestore().collection('users')
-                usersRefs.doc(email).set(data)
-                    .then(() => {
-                        navigation.navigate('HomeScreen', { user: data })
-                    })
-                    .catch((error) => {
-                        alert(error)
-                    });
-            })
-            .catch((error) => {
+                usersRefs.doc(email).set(data).then(() => {
+                    navigation.navigate('HomeScreen')
+                }).catch((error) => {
+                    alert(error)
+                });
+
+
+            }).catch((error) => {
                 alert(error)
             });
+
 
     }
 
@@ -77,6 +80,8 @@ const RegisterScreen = ({ navigation }) => {
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Mobile No.'
                         placeholderTextColor='#ffffff'
+                        onChangeText={(text) => setPhone(text)}
+                        value={phone}
                     />
 
                     <TextInput style={styles.inputBox}
@@ -109,6 +114,7 @@ const RegisterScreen = ({ navigation }) => {
                         <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}><Text style={styles.registerButton}> Login </Text></TouchableOpacity>
                     </View>
                 </KeyboardAvoidingView>
+
             </ScrollView>
         </View>
     );
@@ -117,65 +123,77 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 
     container: {
-        flexGrow: 1,
-    },
+        flexGrow:1,
+        backgroundColor: '#000000',
 
-    signupText: {
-        fontSize: 30,
-        color: '#ffffff',
     },
 
     buttonText: {
-        fontSize: 15,
-        fontWeight: '500',
-        color: '#ffffff',
-        textAlign: 'center'
+        fontSize:15,
+        fontWeight:'500',
+        color:'#ffffff',
+        textAlign:'center'
     },
 
     button: {
-        backgroundColor: 'rgba(255,255,255,0.3)',
+        backgroundColor:'#00008b',
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
-        textAlign: 'center',
+        textAlign:'center',
         paddingVertical: 9,
-        height: 45,
-        marginLeft: 100,
-        marginRight: 100,
+        height: 40,
+        width: 120,
         marginTop: 20,
-        marginBottom: 20
+        marginBottom: 20,
+        alignSelf:'center'
+    },
+
+    inputBox1:{
+        marginTop:30,
+        alignSelf:'center',
+        width:300,
+        backgroundColor:'rgba(255,255,255,0.3)',
+        borderRadius: 25,
+        paddingHorizontal: 16,
+        fontSize: 12,
+        color: '#ffffff',
+        marginVertical: 10,
+        textAlign:'left'
     },
 
     inputBox: {
-        width: 300,
-        backgroundColor: 'rgba(255,255,255,0.3)',
+        alignSelf:'center',
+        width:300,
+        backgroundColor:'rgba(255,255,255,0.3)',
         borderRadius: 25,
         paddingHorizontal: 16,
-        fontSize: 16,
+        fontSize: 12,
         color: '#ffffff',
-        marginVertical: 10
+        marginVertical: 10,
+        textAlign:'left'
     },
 
     registerHere: {
         flexGrow: 1,
         alignItems: 'flex-end',
-        justifyContent: 'center',
+        justifyContent:'center',
         paddingVertical: 10,
-        flexDirection: 'row',
-        marginTop: 150,
+        flexDirection:'row',
     },
 
     inputText: {
-        fontSize: 16,
-        color: '#ffffff',
+        fontSize:16,
+        color:'#ffffff',
     },
 
     registerButton: {
-        color: '#ffffff',
+        color:'#ffffff',
         fontSize: 16,
-        fontWeight: 'bold',
+        fontWeight:'bold',  
     },
-
+    
 })
+
 
 export default RegisterScreen;
