@@ -15,6 +15,7 @@ import {
 
 
 
+
 const LoginScreen = ({ navigation }) => {
 
     const [email, setEmail] = useState('')
@@ -89,6 +90,8 @@ const LoginScreen = ({ navigation }) => {
                     </View>
 
                 </KeyboardAvoidingView>
+
+
             </ScrollView>
         </View>
     );
@@ -96,17 +99,24 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow: 1,
+
+        flexGrow:1,
+        backgroundColor: '#000000',
+
     },
 
     inputBox: {
-        width: 300,
-        backgroundColor: 'rgba(255,255,255,0.3)',
+
+        alignSelf:'center',
+        width:300,
+        backgroundColor:'rgba(255,255,255,0.3)',
+
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 16,
         color: '#ffffff',
-        marginVertical: 10
+        marginVertical: 10,
+        textAlign:'center'
     },
 
     buttonText: {
@@ -147,9 +157,11 @@ const styles = StyleSheet.create({
     registerButton: {
         color: '#ffffff',
         fontSize: 16,
-        fontWeight: 'bold',
+
+        fontWeight:'bold',  
 
     },
+
     forgotButton: {
         fontSize: 14,
         color: '#ffffff',

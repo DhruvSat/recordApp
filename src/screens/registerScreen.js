@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { firebase } from '../firebase/config'
 import {
+
     Text,
     StyleSheet,
     View,
@@ -113,6 +114,7 @@ const RegisterScreen = ({ navigation }) => {
                         <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}><Text style={styles.registerButton}> Login </Text></TouchableOpacity>
                     </View>
                 </KeyboardAvoidingView>
+
             </ScrollView>
         </View>
     );
@@ -121,27 +123,31 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 
     container: {
-        flexGrow: 1,
+
+        flexGrow:1,
+
     },
 
     signupText: {
         fontSize: 30,
-        color: '#ffffff',
+
+        color:'#ffffff',
     },
 
     buttonText: {
-        fontSize: 15,
-        fontWeight: '500',
-        color: '#ffffff',
-        textAlign: 'center'
+        fontSize:15,
+        fontWeight:'500',
+        color:'#ffffff',
+        textAlign:'center'
     },
 
     button: {
-        backgroundColor: 'rgba(255,255,255,0.3)',
+        backgroundColor:'rgba(255,255,255,0.3)',
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
-        textAlign: 'center',
+        textAlign:'center',
+
         paddingVertical: 9,
         height: 45,
         marginLeft: 100,
@@ -151,8 +157,10 @@ const styles = StyleSheet.create({
     },
 
     inputBox: {
-        width: 300,
-        backgroundColor: 'rgba(255,255,255,0.3)',
+
+        width:300,
+        backgroundColor:'rgba(255,255,255,0.3)',
+
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 16,
@@ -163,22 +171,24 @@ const styles = StyleSheet.create({
     registerHere: {
         flexGrow: 1,
         alignItems: 'flex-end',
-        justifyContent: 'center',
+
+        justifyContent:'center',
         paddingVertical: 10,
-        flexDirection: 'row',
-        marginTop: 150,
+        flexDirection:'row',
+        marginTop:150,
     },
 
     inputText: {
-        fontSize: 16,
-        color: '#ffffff',
+        fontSize:16,
+        color:'#ffffff',
     },
 
     registerButton: {
-        color: '#ffffff',
+        color:'#ffffff',
         fontSize: 16,
-        fontWeight: 'bold',
+        fontWeight:'bold',  
     },
+    
 
 })
 
