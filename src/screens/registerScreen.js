@@ -38,7 +38,7 @@ const RegisterScreen = ({ navigation }) => {
                 const usersRefs = firebase.firestore().collection('users')
                 usersRefs.doc(email).set(data)
                     .then(() => {
-                        navigation.navigate('Home', { user: data })
+                        navigation.navigate('HomeScreen', { user: data })
                     })
                     .catch((error) => {
                         alert(error)

@@ -31,7 +31,7 @@ const LoginScreen = ({ navigation }) => {
                             return;
                         }
                         const user = firestoreDocument.data()
-                        navigation.navigate('Home', { user })
+                        navigation.navigate('HomeScreen', { user })
                     })
                     .catch(error => {
                         alert(error)
