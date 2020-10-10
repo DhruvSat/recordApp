@@ -3,6 +3,7 @@ import React from 'react';
 
 import 'react-native-gesture-handler';
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -34,6 +35,9 @@ const Stack = createStackNavigator();
 // }
 
 function App() {
+=======
+
+>>>>>>> 6dab3b0b98903c4f073a0560e41f271ac4d8fa73
 
 
 <<<<<<< HEAD
