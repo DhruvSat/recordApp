@@ -15,16 +15,18 @@ const Stack = createStackNavigator();
 function App() {
 
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <Stack.Navigator initialRouteName="LoginScreen">
         <Stack.Screen
           name='LoginScreen'
           component={LoginScreen}
           options={{ headerShown: false }}
         />
-        <Stack.Screen
+        <Stack.Screen style={styles.signUpNav}
           name='RegisterScreen'
           component={RegisterScreen}
+          options={{ headerShown: false }}
+          // options={{ title:'SignUp'}}
         />
         <Stack.Screen
           name='HomeScreen'
@@ -36,6 +38,12 @@ function App() {
     </NavigationContainer>
   );
 };
+
+const styles = StyleSheet.create({
+  signUpNav: {
+    backgroundColor:'rgba(255,255,255,.3)',
+  }
+});
 
 
 export default App;
