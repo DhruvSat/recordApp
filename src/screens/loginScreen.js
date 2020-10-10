@@ -10,7 +10,7 @@ import {
     ScrollView,
     KeyboardAvoidingView
 } from 'react-native';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 
 
 const LoginScreen = ({ navigation }) => {
@@ -77,30 +77,7 @@ const LoginScreen = ({ navigation }) => {
                         <Text style={styles.inputText}>Don't have an account yet? </Text>
                         <TouchableOpacity onPress={() => onLoginPress()}><Text style={styles.registerButton}> Register </Text></TouchableOpacity>
                     </View>
-                    {/* <View style={{flexDirection:'row'}}>
-                    <TouchableOpacity
-                        style={styles.button}
-                        onPress={() => onLoginPress()}
-                    >
-                        <Text style={styles.buttonText}> Login </Text>
-                    </TouchableOpacity>
 
-                    <View style={styles.registerHere}>
-                        <Text style={styles.inputText}>Don't have an account yet? </Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('RegisterScreen')}><Text style={styles.registerButton}> Register </Text></TouchableOpacity>
-                    </View>
-                    {/* <View style={{flexDirection:'row'}}>
-                <TouchableOpacity>
-                     <Text style={styles.socialButton1}>
-                     <FontAwesome5 name={'facebook'} size={40} color="#3b5998"/>
-                     </Text>
-                </TouchableOpacity>
-                <TouchableOpacity>
-                     <Text style={styles.socialButton2}>
-                     <FontAwesome5 name={'google'} size={40} color="#db3236"/>
-                     </Text>
-                </TouchableOpacity>
-                </View> */}
                 </KeyboardAvoidingView>
             </ScrollView>
         </View>
