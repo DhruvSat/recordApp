@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { firebase } from '../firebase/config'
+// import { firebase } from '../firebase/config'
+import auth from '@react-native-firebase/auth'
+import firestore from '@react-native-firebase/firestore'
 import {
     Text,
     StyleSheet,
@@ -23,10 +25,10 @@ const LoginScreen = ({ navigation }) => {
 
     const onLoginPress = () => {
 
-        firebase.auth().signInWithEmailAndPassword(email, password)
+        auth().signInWithEmailAndPassword(email, password)
             .then((response) => {
                 const email = response.user.email
-                const usersRef = firebase.firestore().collection('users')
+                const usersRef = firestore().collection('users')
                 usersRef.doc(email).get()
                     .then(firestoreDocument => {
                         if (!firestoreDocument.exists) {
