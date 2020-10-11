@@ -5,7 +5,8 @@ import { NavigationContainer } from '@react-navigation/native'
 import 'react-native-gesture-handler';
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
-import HomeScreen from './src/screens/HomeScreen'
+import HomeScreen from './src/screens/HomeScreen';
+import AuthLogin from './src/authentication/Login';
 
 
 
@@ -27,13 +28,17 @@ function App() {
           name='RegisterScreen'
           component={RegisterScreen}
           options={{ headerShown: false }}
-          // options={{ title:'SignUp'}}
+        // options={{ title:'SignUp'}}
         />
 
         <Stack.Screen
           name='HomeScreen'
           component={HomeScreen}
+        />
 
+        <Stack.Screen
+          name='AuthLogin'
+          component={AuthLogin}
         />
 
 

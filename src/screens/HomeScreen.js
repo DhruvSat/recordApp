@@ -2,7 +2,7 @@ import React from 'react'
 
 import { View, Text } from 'react-native'
 
-const HomeScreen = ({ route, navigation }) => {
+const HomeScreen = ({ route }) => {
     const { user } = route.params;
 
     return (

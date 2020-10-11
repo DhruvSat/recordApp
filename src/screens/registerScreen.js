@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 // import { firebase } from '../firebase/config'
 import auth from '@react-native-firebase/auth'
-import auth from '@react-native-firebase/firestore'
+import firestore from '@react-native-firebase/firestore'
 import {
 
     Text,
@@ -42,7 +42,7 @@ const RegisterScreen = ({ navigation }) => {
 
                 const usersRefs = firestore().collection('users')
                 usersRefs.doc(email).set(data).then(() => {
-                    navigation.navigate('HomeScreen')
+                    navigation.navigate('HomeScreen', { user: data })
                 }).catch((error) => {
                     alert(error)
                 });
