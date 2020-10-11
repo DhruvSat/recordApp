@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-
-// import { firebase } from '../firebase/config'
 import auth from '@react-native-firebase/auth'
 import firestore from '@react-native-firebase/firestore'
 import {
-
     Text,
     StyleSheet,
     View,
@@ -41,7 +38,7 @@ const RegisterScreen = ({ navigation }) => {
                 };
 
                 const usersRefs = firestore().collection('users')
-                usersRefs.doc(email).set(data).then(() => {
+                usersRefs.doc(uid).set(data).then(() => {
                     navigation.navigate('HomeScreen', { user: data })
                 }).catch((error) => {
                     alert(error)

@@ -1,50 +1,76 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import auth from '@react-native-firebase/auth'
+// import firestore from '@react-native-firebase/firestore'
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native'
 import 'react-native-gesture-handler';
 import LoginScreen from './src/screens/LoginScreen';
 import RegisterScreen from './src/screens/RegisterScreen';
 import HomeScreen from './src/screens/HomeScreen';
-import AuthLogin from './src/authentication/Login';
-
+// import { View, Text } from 'react-native';
 
 
 const Stack = createStackNavigator();
 
 function App() {
 
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
 
+  // Handle user state changes
+  function onAuthStateChanged(user) {
+    setUser(user);
+    if (initializing) setInitializing(false);
+  }
+
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
+
+  if (initializing) return null;
 
   return (
-    <NavigationContainer >
-      <Stack.Navigator initialRouteName="LoginScreen">
-        <Stack.Screen
-          name='LoginScreen'
-          component={LoginScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name='RegisterScreen'
-          component={RegisterScreen}
-          options={{ headerShown: false }}
-        // options={{ title:'SignUp'}}
-        />
 
-        <Stack.Screen
-          name='HomeScreen'
-          component={HomeScreen}
-        />
-
-        <Stack.Screen
-          name='AuthLogin'
-          component={AuthLogin}
-        />
-
-
-
+    <NavigationContainer>
+      <Stack.Navigator>
+        {/* If this is true ? executeThis() : orElseThis() */}
+        {user ? (
+          <Stack.Screen name="HomeScreen" >
+            {props => <HomeScreen {...props} extraData={user} />}
+          </Stack.Screen>
+        ) : (
+            <>
+              <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
+              <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
+            </>
+          )}
       </Stack.Navigator>
     </NavigationContainer>
+
+    // Satu bhai kaa navContainer
+    // <NavigationContainer >
+    //   <Stack.Navigator >
+    //     <Stack.Screen
+    //       name='LoginScreen'
+    //       component={LoginScreen}
+    //       options={{ headerShown: false }}
+    //     />
+    //     <Stack.Screen
+    //       name='RegisterScreen'
+    //       component={RegisterScreen}
+    //       options={{ headerShown: false }}
+    //     // options={{ title:'SignUp'}}
+    //     />
+
+    //     <Stack.Screen
+    //       name='HomeScreen'
+    //       component={HomeScreen}
+    //     />
+
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   );
 };
 

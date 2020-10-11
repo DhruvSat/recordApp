@@ -27,9 +27,9 @@ const LoginScreen = ({ navigation }) => {
 
         auth().signInWithEmailAndPassword(email, password)
             .then((response) => {
-                const email = response.user.email
+                const uid = response.user.uid
                 const usersRef = firestore().collection('users')
-                usersRef.doc(email).get()
+                usersRef.doc(uid).get()
                     .then(firestoreDocument => {
                         if (!firestoreDocument.exists) {
                             alert("User does not exist anymore.")
