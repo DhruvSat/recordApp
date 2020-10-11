@@ -58,9 +58,9 @@ const RegisterScreen = ({ navigation }) => {
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                    <Text style={styles.signupText}>SignUp!</Text>
+                <Text style={{fontSize:25,color:'#ffffff',alignSelf:'center',marginTop:90}}>SignUp</Text>
 
-                    <TextInput style={styles.inputBox}
+                    <TextInput style={styles.inputBox1}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Name'
                         placeholderTextColor='#ffffff'
@@ -106,7 +106,7 @@ const RegisterScreen = ({ navigation }) => {
                     <TouchableOpacity
                         style={styles.button}
                         onPress={() => onRegisterPress()}>
-                        <Text style={styles.buttonText}> Register Account </Text>
+                        <Text style={styles.buttonText}> Sign Up </Text>
                     </TouchableOpacity>
 
                     <View style={styles.registerHere}>
@@ -123,17 +123,15 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 
     container: {
-
         flexGrow:1,
+        backgroundColor: '#000000',
 
     },
 
     signupText: {
         fontSize: 30,
-
         color:'#ffffff',
     },
-
     buttonText: {
         fontSize:15,
         fontWeight:'500',
@@ -142,40 +140,51 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        backgroundColor:'rgba(255,255,255,0.3)',
+        backgroundColor:'#00008b',
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
         textAlign:'center',
-
         paddingVertical: 9,
-        height: 45,
-        marginLeft: 100,
-        marginRight: 100,
+        height: 40,
+        width: 100,
         marginTop: 20,
-        marginBottom: 20
+        marginBottom: 20,
+        alignSelf:'center'
+    },
+
+    inputBox1:{
+        marginTop:30,
+        alignSelf:'center',
+        width:300,
+        backgroundColor:'rgba(255,255,255,0.3)',
+        borderRadius: 25,
+        paddingHorizontal: 16,
+        fontSize: 12,
+        color: '#ffffff',
+        marginVertical: 10,
+        textAlign:'left'
     },
 
     inputBox: {
-
+        alignSelf:'center',
         width:300,
         backgroundColor:'rgba(255,255,255,0.3)',
-
         borderRadius: 25,
         paddingHorizontal: 16,
-        fontSize: 16,
+        fontSize: 12,
         color: '#ffffff',
-        marginVertical: 10
+        marginVertical: 10,
+        textAlign:'left'
     },
 
     registerHere: {
         flexGrow: 1,
         alignItems: 'flex-end',
-
+        // marginTop:150/,
         justifyContent:'center',
-        paddingVertical: 10,
+        paddingVertical: 20,
         flexDirection:'row',
-        marginTop:150,
     },
 
     inputText: {
@@ -189,7 +198,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',  
     },
     
-
 })
+
 
 export default RegisterScreen;
