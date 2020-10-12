@@ -6,7 +6,8 @@ import News from '../components/News'
 
 
 
-const HomeScreen = (props) => {
+
+const HomeScreen = (props,{navigation}) => {
 
     const userID = props.extraData.uid;
 
@@ -45,7 +46,12 @@ const HomeScreen = (props) => {
 
             <TouchableOpacity style={styles.button}
                 onPress={() => onLogoutPress()}>
+
                 <Text style={styles.buttonText}> LOG OUT </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => navigation.navigate('AddNewRecord')}>
+                <Text style={styles.buttonText}> Add  </Text>
             </TouchableOpacity>
         </View>
 
