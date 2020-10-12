@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import auth from '@react-native-firebase/auth'
 import firestore from '@react-native-firebase/firestore'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import News from '../components/News'
 
 
 
@@ -35,6 +36,8 @@ const HomeScreen = (props) => {
 
     return (
         <View>
+
+            <News />
 
             <Text>Email:{userEmail}</Text>
             <Text>Name:{userName}</Text>
