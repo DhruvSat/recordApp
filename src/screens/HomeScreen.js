@@ -7,7 +7,7 @@ import News from '../components/News'
 import { AuthContext } from '../navigation/AuthProvider';
 
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
     const { user, logout } = useContext(AuthContext);
 
     const [userEmail, setUserEmail] = useState('')

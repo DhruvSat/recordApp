@@ -13,7 +13,11 @@ export default function AuthStack() {
                 component={LoginScreen}
                 options={{ header: () => null }}
             />
-            <Stack.Screen name='RegisterScreen' component={RegisterScreen} />
+            <Stack.Screen
+                name='RegisterScreen'
+                component={RegisterScreen}
+                options={{ header: () => null }}
+            />
         </Stack.Navigator>
     );
 }

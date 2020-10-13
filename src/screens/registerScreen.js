@@ -30,7 +30,6 @@ const RegisterScreen = ({ navigation }) => {
 
         register(email, password, fullName, phone)
 
-        // navigation.navigate("HomeScreen")
 
     }
 
