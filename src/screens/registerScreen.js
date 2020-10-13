@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import auth from '@react-native-firebase/auth'
-import firestore from '@react-native-firebase/firestore'
+import React, { useState, useContext } from 'react';
+// import auth from '@react-native-firebase/auth'
+// import firestore from '@react-native-firebase/firestore'
+import { AuthContext } from '../navigation/AuthProvider';
 import {
     Text,
     StyleSheet,
@@ -13,6 +14,7 @@ import {
 
 
 const RegisterScreen = ({ navigation }) => {
+    const { register } = useContext(AuthContext);
 
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
@@ -26,29 +28,9 @@ const RegisterScreen = ({ navigation }) => {
             return
         }
 
-        //creating user
-        auth().createUserWithEmailAndPassword(email, password)
-            .then((response) => {
-                const uid = response.user.uid
-                const data = {
-                    id: uid,
-                    email,
-                    fullName,
-                    phone
-                };
+        register(email, password, fullName, phone)
 
-                const usersRefs = firestore().collection('users')
-                usersRefs.doc(uid).set(data).then(() => {
-                    navigation.navigate('HomeScreen', { user: data })
-                }).catch((error) => {
-                    alert(error)
-                });
-
-
-            }).catch((error) => {
-                alert(error)
-            });
-
+        // navigation.navigate("HomeScreen")
 
     }
 

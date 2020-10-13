@@ -1,51 +1,25 @@
-import React, { useState } from 'react'
-import auth from '@react-native-firebase/auth'
+import React, { useState, useContext } from 'react'
+
 import firestore from '@react-native-firebase/firestore'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import News from '../components/News'
-import { useNavigation } from '@react-navigation/native';
+
+import { AuthContext } from '../navigation/AuthProvider';
 
 
-const HomeScreen = (props) => {
-
-    const navigation = useNavigation();
-    const userID = props.extraData.uid;
-
-    const [userEmail, setUserEmail] = useState('')
-    const [userName, setUserName] = useState('')
-    const [userPhone, setUserPhone] = useState('')
-
-    const onLogoutPress = () => {
-        auth()
-            .signOut()
-            .then(() => alert('Logged out successfully'));
-    }
-
-    //fetching user data by user id
-    firestore()
-        .collection('users')
-        .doc(userID)
-        .get()
-        .then(documentSnapshot => {
-            if (documentSnapshot.exists) {
-                setUserName(documentSnapshot.data().fullName)
-                setUserEmail(documentSnapshot.data().email)
-                setUserPhone(documentSnapshot.data().phone)
-            }
-        });
-
-
+export default function HomeScreen() {
+    const { user, logout } = useContext(AuthContext);
     return (
         <View>
 
             <News />
 
-            <Text>Email:{userEmail}</Text>
-            <Text>Name:{userName}</Text>
-            <Text>Phone:{userPhone}</Text>
+            <Text>Email:{user.email}</Text>
+            <Text>Name:{user.fullName}</Text>
+            <Text>Phone:{user.phone}</Text>
 
             <TouchableOpacity style={styles.button}
-                onPress={() => onLogoutPress()}>
+                onPress={() => logout()}>
                 <Text style={styles.buttonText}> LOG OUT </Text>
             </TouchableOpacity>
 
@@ -75,4 +49,3 @@ const styles = StyleSheet.create({
     },
 })
 
-export default HomeScreen
