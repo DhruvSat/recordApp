@@ -9,14 +9,32 @@ import { AuthContext } from '../navigation/AuthProvider';
 
 export default function HomeScreen() {
     const { user, logout } = useContext(AuthContext);
+
+    const [userEmail, setUserEmail] = useState('')
+    const [userName, setUserName] = useState('')
+    const [userPhone, setUserPhone] = useState('')
+
+    //fetching user data by user id
+    firestore()
+        .collection('users')
+        .doc(user.uid)
+        .get()
+        .then(documentSnapshot => {
+            if (documentSnapshot.exists) {
+                setUserName(documentSnapshot.data().fullName)
+                setUserEmail(documentSnapshot.data().email)
+                setUserPhone(documentSnapshot.data().phone)
+            }
+        });
+
     return (
         <View>
 
             <News />
 
-            <Text>Email:{user.email}</Text>
-            <Text>Name:{user.fullName}</Text>
-            <Text>Phone:{user.phone}</Text>
+            <Text>Email:{userEmail}</Text>
+            <Text>Name:{userName}</Text>
+            <Text>Phone:{userPhone}</Text>
 
             <TouchableOpacity style={styles.button}
                 onPress={() => logout()}>
