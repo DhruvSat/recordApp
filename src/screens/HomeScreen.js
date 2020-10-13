@@ -3,11 +3,12 @@ import auth from '@react-native-firebase/auth'
 import firestore from '@react-native-firebase/firestore'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import News from '../components/News'
-
+import { useNavigation } from '@react-navigation/native';
 
 
 const HomeScreen = (props) => {
 
+    const navigation = useNavigation();
     const userID = props.extraData.uid;
 
     const [userEmail, setUserEmail] = useState('')
@@ -46,6 +47,11 @@ const HomeScreen = (props) => {
             <TouchableOpacity style={styles.button}
                 onPress={() => onLogoutPress()}>
                 <Text style={styles.buttonText}> LOG OUT </Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('ProfileScreen') }}>
+                <Text style={styles.buttonText}> GO TO PROFILE </Text>
             </TouchableOpacity>
         </View>
 
