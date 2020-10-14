@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-
-import { firebase } from '../firebase/config'
+import React, { useState, useContext } from 'react';
+// import auth from '@react-native-firebase/auth'
+// import firestore from '@react-native-firebase/firestore'
+import { AuthContext } from '../navigation/AuthProvider';
 import {
-
     Text,
     StyleSheet,
     View,
@@ -14,6 +14,7 @@ import {
 
 
 const RegisterScreen = ({ navigation }) => {
+    const { register } = useContext(AuthContext);
 
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
@@ -27,28 +28,7 @@ const RegisterScreen = ({ navigation }) => {
             return
         }
 
-        //creating user
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((response) => {
-                const uid = response.user.uid
-                const data = {
-                    id: uid,
-                    email,
-                    fullName,
-                    phone
-                };
-
-                const usersRefs = firebase.firestore().collection('users')
-                usersRefs.doc(email).set(data).then(() => {
-                    navigation.navigate('HomeScreen')
-                }).catch((error) => {
-                    alert(error)
-                });
-
-
-            }).catch((error) => {
-                alert(error)
-            });
+        register(email, password, fullName, phone)
 
 
     }
@@ -58,7 +38,7 @@ const RegisterScreen = ({ navigation }) => {
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                <Text style={{fontSize:25,color:'#ffffff',alignSelf:'center',marginTop:90}}>SignUp</Text>
+                    <Text style={{ fontSize: 25, color: '#ffffff', alignSelf: 'center', marginTop: 90 }}>SignUp</Text>
 
                     <TextInput style={styles.inputBox1}
                         underlinecolorAndroid='rgba(0,0,0,0)'
@@ -123,81 +103,81 @@ const RegisterScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 
     container: {
-        flexGrow:1,
+        flexGrow: 1,
         backgroundColor: '#000000',
 
     },
 
     signupText: {
         fontSize: 30,
-        color:'#ffffff',
+        color: '#ffffff',
     },
     buttonText: {
-        fontSize:15,
-        fontWeight:'500',
-        color:'#ffffff',
-        textAlign:'center'
+        fontSize: 15,
+        fontWeight: '500',
+        color: '#ffffff',
+        textAlign: 'center'
     },
 
     button: {
-        backgroundColor:'#00008b',
+        backgroundColor: '#00008b',
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
-        textAlign:'center',
+        textAlign: 'center',
         paddingVertical: 9,
         height: 40,
         width: 100,
         marginTop: 20,
         marginBottom: 20,
-        alignSelf:'center'
+        alignSelf: 'center'
     },
 
-    inputBox1:{
-        marginTop:30,
-        alignSelf:'center',
-        width:300,
-        backgroundColor:'rgba(255,255,255,0.3)',
+    inputBox1: {
+        marginTop: 30,
+        alignSelf: 'center',
+        width: 300,
+        backgroundColor: 'rgba(255,255,255,0.3)',
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 12,
         color: '#ffffff',
         marginVertical: 10,
-        textAlign:'left'
+        textAlign: 'left'
     },
 
     inputBox: {
-        alignSelf:'center',
-        width:300,
-        backgroundColor:'rgba(255,255,255,0.3)',
+        alignSelf: 'center',
+        width: 300,
+        backgroundColor: 'rgba(255,255,255,0.3)',
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 12,
         color: '#ffffff',
         marginVertical: 10,
-        textAlign:'left'
+        textAlign: 'left'
     },
 
     registerHere: {
         flexGrow: 1,
         alignItems: 'flex-end',
         // marginTop:150/,
-        justifyContent:'center',
+        justifyContent: 'center',
         paddingVertical: 20,
-        flexDirection:'row',
+        flexDirection: 'row',
     },
 
     inputText: {
-        fontSize:16,
-        color:'#ffffff',
+        fontSize: 16,
+        color: '#ffffff',
     },
 
     registerButton: {
-        color:'#ffffff',
+        color: '#ffffff',
         fontSize: 16,
-        fontWeight:'bold',  
+        fontWeight: 'bold',
     },
-    
+
 })
 
 

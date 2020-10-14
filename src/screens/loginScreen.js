@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { firebase } from '../firebase/config'
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../navigation/AuthProvider';
+
 import {
     Text,
     StyleSheet,
@@ -20,39 +21,14 @@ const LoginScreen = ({ navigation }) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    const onLoginPress = () => {
-
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((response) => {
-                const email = response.user.email
-                const usersRef = firebase.firestore().collection('users')
-                usersRef.doc(email).get()
-                    .then(firestoreDocument => {
-                        if (!firestoreDocument.exists) {
-                            alert("User does not exist anymore.")
-                            return;
-                        }
-                        const user = firestoreDocument.data()
-                        navigation.navigate('HomeScreen', { user })
-                    })
-                    .catch(error => {
-                        alert(error)
-                    });
-            })
-            .catch(error => {
-                alert(error)
-            })
-    }
-
-
+    const { login } = useContext(AuthContext);
 
     return (
         <View style={styles.container}>
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                    <Image style={{ width: 250, height: 200, resizeMode: 'contain', marginTop: 90, marginBottom: 40 ,alignSelf: 'center'}}
+                    <Image style={{ width: 250, height: 200, resizeMode: 'contain', marginTop: 90, marginBottom: 40, alignSelf: 'center' }}
                         source={require('../../assets/logo.png')}
                     />
 
@@ -77,7 +53,7 @@ const LoginScreen = ({ navigation }) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.button}
-                    onPress={()=>onLoginPress()}>
+                        onPress={() => login(email, password)}>
                         <Text style={styles.buttonText}> LOG IN </Text>
                     </TouchableOpacity>
 
@@ -96,69 +72,69 @@ const LoginScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow:1,
+        flexGrow: 1,
         backgroundColor: '#000',
     },
-    
+
     inputBox: {
-        alignSelf:'center',
-        width:300,
-        backgroundColor:'rgba(255,255,255,0.3)',
+        alignSelf: 'center',
+        width: 300,
+        backgroundColor: 'rgba(255,255,255,0.3)',
         borderRadius: 25,
         paddingHorizontal: 16,
         fontSize: 13,
         color: '#ffffff',
         marginVertical: 10,
-        textAlign:'left'
+        textAlign: 'left'
     },
-    
+
     buttonText: {
-        fontSize:15,
-        fontWeight:'500',
-        color:'#ffffff',
-        textAlign:'center'
+        fontSize: 15,
+        fontWeight: '500',
+        color: '#ffffff',
+        textAlign: 'center'
     },
 
     button: {
         // backgroundColor:'rgba(255,255,255,0.3)',
-        backgroundColor:'#00008d',
+        backgroundColor: '#00008d',
         borderRadius: 40,
         color: '#ffffff',
         marginVertical: 15,
-        textAlign:'center',
+        textAlign: 'center',
         paddingVertical: 9,
         height: 45,
         marginTop: 20,
         marginBottom: 20,
-        width:100,
-        alignSelf:'center',
+        width: 100,
+        alignSelf: 'center',
     },
 
     registerHere: {
         flexGrow: 1,
         alignItems: 'flex-end',
-        justifyContent:'center',
+        justifyContent: 'center',
         paddingVertical: 10,
-        flexDirection:'row',
-        marginTop:100,
+        flexDirection: 'row',
+        marginTop: 100,
     },
 
     inputText: {
-        fontSize:16,
-        color:'#ffffff',
+        fontSize: 16,
+        color: '#ffffff',
     },
 
     registerButton: {
-        color:'#ffffff',
+        color: '#ffffff',
         fontSize: 16,
-        fontWeight:'bold',  
+        fontWeight: 'bold',
     },
 
     forgotButton: {
-        fontSize:14,
-        color:'#ffffff',
-        paddingHorizontal:10,
-        fontStyle:'italic',
+        fontSize: 14,
+        color: '#ffffff',
+        paddingHorizontal: 10,
+        fontStyle: 'italic',
         marginLeft: 40,
     },
 })

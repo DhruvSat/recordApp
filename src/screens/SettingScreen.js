@@ -1,22 +1,21 @@
-import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import News from '../components/News'
+import React from 'react';
 
-export default function HomeScreen({ navigation }) {
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+
+
+const SettingScreen = ({ navigation }) => {
     return (
         <View>
-            <News />
-
+            <Text>
+                SETTINGS!!!!!!!!!
+            </Text>
             <TouchableOpacity style={styles.button}
                 onPress={() => { navigation.navigate('ProfileScreen') }}>
-                <Text style={styles.buttonText}> GO TO PROFILE </Text>
+                <Text style={styles.buttonText}> GO TO Profile </Text>
             </TouchableOpacity>
         </View>
-
     )
-
 }
-
 const styles = StyleSheet.create({
     button: {
         backgroundColor: '#00008d',
@@ -33,3 +32,4 @@ const styles = StyleSheet.create({
     },
 })
 
+export default SettingScreen
