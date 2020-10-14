@@ -4,45 +4,47 @@ import { FlatListSlider } from 'react-native-flatlist-slider';
 import { View, Text, Image } from 'react-native'
 
 
-function listFilesAndDirectories(reference, pageToken) {
-    return reference.list({ pageToken }).then(result => {
-        // Loop over each item
-        result.items.forEach(ref => {
-            getUrl(ref.fullPath)
+// function listFilesAndDirectories(reference, pageToken) {
+//     return reference.list({ pageToken }).then(result => {
+//         // Loop over each item
+//         result.items.forEach(ref => {
+//             getUrl(ref.fullPath)
 
-        });
+//         });
 
-        if (result.nextPageToken) {
-            return listFilesAndDirectories(reference, result.nextPageToken);
-        }
+//         if (result.nextPageToken) {
+//             return listFilesAndDirectories(reference, result.nextPageToken);
+//         }
 
-        return Promise.resolve();
-    });
-}
+//         return Promise.resolve();
+//     });
+// }
 
-const reference = storage().ref('news');
+// const reference = storage().ref('news');
 
-listFilesAndDirectories(reference).then(() => {
-    console.log('Finished listing');
-});
-var arr =[]
-var obj ={}
-async function getUrl(path) {
+// listFilesAndDirectories(reference).then(() => {
+//     console.log('Finished listing');
+// });
+// var arr =[]
+// var obj ={}
+// async function getUrl(path) {
     
     
-    url = await storage()
-        .ref(path)
-        .getDownloadURL();
+//     url = await storage()
+//         .ref(path)
+//         .getDownloadURL();
 
-    obj = { image: url.toString() }
-    arr.push(obj)
-    // console.log(JSON.stringify(obj))
-    console.log(JSON.stringify(arr))
-    window.images = arr.slice() //making images(array) globally available
-}
+//     obj = { image: url.toString() }
+//     arr.push(obj)
+//     // console.log(JSON.stringify(obj))
+//     console.log(JSON.stringify(arr))
+//     window.images = arr.slice() //making images(array) globally available
+// }
 
 
 const News = () => {
+
+    const images = [{image:''},{image:''}]
 
     return (
         <View>
