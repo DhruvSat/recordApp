@@ -3,9 +3,6 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-nati
 import Grid from '../components/Grid'
 import News from '../components/News'
 
-
-
-
 export default function HomeScreen({ navigation }) {
     return (
         <ScrollView >

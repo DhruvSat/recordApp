@@ -1,20 +1,21 @@
 import * as React from "react";
-import { View, Text, Image, FlatList, Dimensions, StyleSheet } from "react-native";
-// import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { View, Text, Image, FlatList, Dimensions, StyleSheet, TouchableOpacity } from "react-native";
+
 
 const picsumImages = new Array(11).fill("http://placeimg.com/640/360/any");
 const numColumns = 3;
-// const screenWidth = Dimensions.get("window").width;
-
-// const tileSize = screenWidth / numColumns;
-
 
 function renderItem({ item }) {
     return (
-        <Image
-            source={{ uri: item, }}
-            style={{ margin: 4, aspectRatio: 1, flex: 1 / numColumns, overflow: "hidden", borderRadius: 8 }}
-        />
+        <TouchableOpacity style={{
+            flex: 1 / 3,
+        }}>
+            <Image
+                source={{ uri: item, }}
+                style={{ margin: 3, marginVertical: 5, aspectRatio: 1, flex: 1 / numColumns, overflow: "hidden", borderRadius: 8 }}
+            />
+        </TouchableOpacity>
+
 
     );
 }
@@ -22,14 +23,13 @@ function renderItem({ item }) {
 const Grid = () => {
     const [images, setImages] = React.useState(picsumImages);
     return (
-        <FlatList style={{ marginHorizontal: 5 }} columnWrapperStyle={style.row} data={images} renderItem={renderItem} numColumns={numColumns} />
+        <FlatList style={{ marginLeft: 8 }} columnWrapperStyle={style.row} data={images} renderItem={renderItem} numColumns={numColumns} />
     );
 }
 
 const style = StyleSheet.create({
     row: {
         flex: 1,
-        // justifyContent: "space-between",
         alignItems: 'flex-start'
     }
 });
