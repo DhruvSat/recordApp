@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import storage from '@react-native-firebase/storage';
 import { FlatListSlider } from 'react-native-flatlist-slider';
-import { View, Text, Image } from 'react-native'
+import { View, Text } from 'react-native'
 
 
 function listFilesAndDirectories(reference, pageToken) {
@@ -57,7 +57,7 @@ const News = () => {
             </Text>
             <View>
                 <FlatListSlider
-                    data={images}
+                    data={window.images}
                     height={120}
                     // timer={5000}
                     onPress={item => alert(JSON.stringify(item))}
