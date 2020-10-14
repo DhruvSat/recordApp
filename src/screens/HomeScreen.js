@@ -1,23 +1,21 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
-import CardView from '../components/Card'
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native'
+import Grid from '../components/Grid'
 import News from '../components/News'
+
 
 
 
 export default function HomeScreen({ navigation }) {
     return (
-        <View>
-
+        <ScrollView >
             <News />
-
-            <CardView />
-
+            <Grid />
             <TouchableOpacity style={styles.button}
                 onPress={() => { navigation.navigate('ProfileScreen') }}>
                 <Text style={styles.buttonText}> GO TO PROFILE </Text>
             </TouchableOpacity>
-        </View>
+        </ScrollView>
 
     )
 

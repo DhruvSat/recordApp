@@ -28,8 +28,8 @@ import { View, Text, Image } from 'react-native'
 // var arr =[]
 // var obj ={}
 // async function getUrl(path) {
-    
-    
+
+
 //     url = await storage()
 //         .ref(path)
 //         .getDownloadURL();
@@ -44,30 +44,35 @@ import { View, Text, Image } from 'react-native'
 
 const News = () => {
 
-    const images = [{image:''},{image:''}]
+    const images = [
+        {
+            image: 'https://web.umang.gov.in/uaw/images/banner_01.jpg',
+            desc: 'Banner1',
+        },
+        {
+            image: 'https://web.umang.gov.in/uaw/images/banner_04.jpg',
+            desc: 'Banner2',
+        },
+    ]
 
     return (
-        <View>
-            <Text>
-                LUCKY if you see this
-               
-            </Text>
-            <View>
-                <FlatListSlider
-                    data={images}
-                    height={120}
-                    // timer={5000}
-                    onPress={item => alert(JSON.stringify(item))}
-                    contentContainerStyle={{  }}
-                    indicatorContainerStyle={{ position: 'absolute', bottom: 10 }}
-                    indicatorActiveColor={'#8e44ad'}
-                    indicatorInActiveColor={'#ffffff'}
-                    indicatorActiveWidth={12}
-                    animation
-                />
-            </View>
-            
+        <View style={{ margin: 10, borderRadius: 8, overflow: "hidden" }}>
+            <FlatListSlider
+                data={images}
+                imageKey={'image'}
+                height={120}
+                // timer={5000}
+                autoscroll='false'
+                onPress={item => alert(JSON.stringify(item))}
+                contentContainerStyle={{}}
+                indicatorContainerStyle={{ position: 'absolute', bottom: 7 }}
+                indicatorActiveColor={'#8e44ad'}
+                indicatorInActiveColor={'#ffffff'}
+                indicatorActiveWidth={12}
+                animation
+            />
         </View>
+
     )
 }
 
