@@ -32,6 +32,7 @@
     "react-native-fast-image": "^8.3.2",
     "react-native-flatlist-slider": "^1.0.4",
     "react-native-gesture-handler": "^1.8.0",
+    "react-native-paper": "^4.2.0",
     "react-native-reanimated": "^1.13.1",
     "react-native-router-flux": "^4.2.0",
     "react-native-safe-area-context": "^3.1.8",

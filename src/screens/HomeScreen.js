@@ -6,9 +6,10 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-nati
 export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
-        <ScrollView  >
-            {/* <News /> */}
-            {/* <Grid /> */}
+        <ScrollView >
+            
+            <News />
+            <Grid />
             <TouchableOpacity style={styles.button}
                 onPress={() => { navigation.navigate('ProfileScreen') }}>
                 <Text style={styles.buttonText}> PROFILE </Text>
