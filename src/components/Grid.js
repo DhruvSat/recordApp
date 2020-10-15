@@ -2,8 +2,8 @@ import * as React from "react";
 import { View, Text, Image, FlatList, Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 
 
-const picsumImages = new Array(11).fill("http://placeimg.com/640/360/any");
-const numoClumns = 3;
+const picsumImages = ['']
+const numColumns = 3;
 
 function renderItem({ item }) {
     return (
@@ -12,7 +12,7 @@ function renderItem({ item }) {
         }}>
             <Image
                 source={{ uri: item, }}
-                style={{ margin: 3, marginVertical: 5, aspectRatio: 1, flex: 1 / numColumns, overflow: "hidden", borderRadius: 8 }}
+                style={{ margin: 3, marginVertical: 5, aspectRatio: 1, flex: 1 / numColumns, overflow: "hidden", borderRadius: 8, borderWidth: 1, borderColor: 'white' }}
             />
         </TouchableOpacity>
 

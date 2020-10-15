@@ -56,28 +56,8 @@ const News = () => {
     ]
 
     return (
-        <View>
-            <Text>
-                LUCKY if you see this
-               
-            </Text>
-            
-            <View>
-                <FlatListSlider
-                    data={window.images}
-                    height={120}
-                    // timer={5000}
-                    onPress={item => alert(JSON.stringify(item))}
-                    contentContainerStyle={{  }}
-                    indicatorContainerStyle={{ position: 'absolute', bottom: 10 }}
-                    indicatorActiveColor={'#8e44ad'}
-                    indicatorInActiveColor={'#ffffff'}
-                    indicatorActiveWidth={12}
-                    animation
-                />
-            </View>
-            
-        <View style={{ margin: 10, borderRadius: 8, overflow: "hidden" }}>
+
+        <View style={{ margin: 10, borderRadius: 8, overflow: "hidden", marginTop: 15 }}>
             <FlatListSlider
                 data={images}
                 imageKey={'image'}
@@ -93,7 +73,7 @@ const News = () => {
                 animation
             />
         </View>
-        </View>
+
 
     )
 }
