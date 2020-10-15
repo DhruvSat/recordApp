@@ -9,6 +9,9 @@ import ReportCrime from '../screens/ReportCrime';
 import ViewFirDetail from '../screens/ViewFirDetail';
 import { color } from 'react-native-reanimated';
 import SuccessPage from '../components/SuccessPage';
+import ReportMissingPerson from '../screens/ReportMissingPerson';
+import NOC from '../screens/NOC';
+import PVC from '../screens/PVC';
 
 const Stack = createStackNavigator();
 
@@ -18,9 +21,9 @@ export default function HomeStack() {
     <Stack.Navigator>
       <Stack.Screen name='HomeScreen' component={HomeScreen}
         options={{
-          title: 'Home Screen',
+          title: 'Gujarat Citizen',
           headerStyle: {
-            backgroundColor: '#00008d',
+            backgroundColor: '#0f3460',
           },
           headerTitleStyle: {
             color: '#ffffff'
@@ -33,7 +36,7 @@ export default function HomeStack() {
         options={{
           title: 'PROFILE',
           headerStyle: {
-            backgroundColor: '#00008d',
+            backgroundColor: '#0f3460',
           },
           headerTitleStyle: {
             color: '#ffffff'
@@ -45,7 +48,7 @@ export default function HomeStack() {
         options={{
           title: 'WOMEN SAFTEY',
           headerStyle: {
-            backgroundColor: '#00008d',
+            backgroundColor: '#0f3460',
           },
           headerTitleStyle: {
             color: '#ffffff'
@@ -57,7 +60,7 @@ export default function HomeStack() {
         options={{
           title: 'REGISTER COMPLAINT',
           headerStyle: {
-            backgroundColor: '#00008d',
+            backgroundColor: '#0f3460',
           },
           headerTitleStyle: {
             color: '#ffffff'
@@ -69,7 +72,7 @@ export default function HomeStack() {
         options={{
           title: 'Success ✅',
           headerStyle: {
-            backgroundColor: '#00008d',
+            backgroundColor: '#0f3460',
           },
           headerTitleStyle: {
             color: '#ffffff'
@@ -81,7 +84,7 @@ export default function HomeStack() {
         options={{
           title: 'REPORT CRIME',
           headerStyle: {
-            backgroundColor: '#00008d',
+            backgroundColor: '#0f3460',
           },
           headerTitleStyle: {
             color: '#ffffff'
@@ -93,7 +96,43 @@ export default function HomeStack() {
         options={{
           title: 'View FIR Detail',
           headerStyle: {
-            backgroundColor: '#00008d',
+            backgroundColor: '#0f3460',
+          },
+          headerTitleStyle: {
+            color: '#ffffff'
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: 'white'
+        }} />
+      <Stack.Screen name='ReportMissingPerson' component={ReportMissingPerson}
+        options={{
+          title: 'Report Missing Person',
+          headerStyle: {
+            backgroundColor: '#0f3460',
+          },
+          headerTitleStyle: {
+            color: '#ffffff'
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: 'white'
+        }} />
+      <Stack.Screen name='NOC' component={NOC}
+        options={{
+          title: 'Apply For NOC',
+          headerStyle: {
+            backgroundColor: '#0f3460',
+          },
+          headerTitleStyle: {
+            color: '#ffffff'
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: 'white'
+        }} />
+      <Stack.Screen name='PVC' component={PVC}
+        options={{
+          title: 'Police Verification Certificate',
+          headerStyle: {
+            backgroundColor: '#0f3460',
           },
           headerTitleStyle: {
             color: '#ffffff'

@@ -56,8 +56,9 @@ const News = () => {
     ]
 
     return (
-
-        <View style={{ margin: 10, borderRadius: 8, overflow: "hidden", marginTop: 15 }}>
+    
+         
+        <View style={{ margin: 10, borderRadius: 8, overflow: "hidden" ,marginTop:15}}>
             <FlatListSlider
                 data={images}
                 imageKey={'image'}
@@ -73,7 +74,7 @@ const News = () => {
                 animation
             />
         </View>
-
+     
 
     )
 }

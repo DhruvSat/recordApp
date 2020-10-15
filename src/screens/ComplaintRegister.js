@@ -143,9 +143,9 @@ const ComplaintRegister = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow: 1,
-        backgroundColor: '#000',
-        alignSelf: 'stretch'
+        flexGrow:1,
+        backgroundColor: '#1a1a2e',
+        paddingVertical:30
     },
 
     inputBox: {
@@ -167,8 +167,8 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        backgroundColor: '#00008d',
-        borderRadius: 40,
+        backgroundColor:'#e94560',
+        borderRadius: 8,
         color: '#ffffff',
         marginVertical: 15,
         textAlign: 'center',

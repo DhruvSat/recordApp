@@ -44,8 +44,8 @@ const ProfileScreen = ({ navigation }) => {
 }
 const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#00008d',
-        borderRadius: 40,
+        backgroundColor: '#e94560',
+        borderRadius: 8,
         color: '#ffffff',
         marginVertical: 15,
         textAlign: 'center',

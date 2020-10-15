@@ -17,14 +17,18 @@ const SettingScreen = ({ navigation }) => {
     )
 }
 const styles = StyleSheet.create({
+    container: {
+        flexGrow:1,
+        backgroundColor: '#1a1a2e',
+    },
     button: {
-        backgroundColor: '#00008d',
-        borderRadius: 40,
+        backgroundColor: '#e94560',
+        borderRadius: 8,
         color: '#ffffff',
         marginVertical: 15,
         textAlign: 'center',
         paddingVertical: 9,
-        height: 45,
+        height: 40,
         marginTop: 20,
         marginBottom: 20,
         width: 100,
