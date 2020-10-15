@@ -56,34 +56,9 @@ const ViewFirDetail = () => {
 const styles = StyleSheet.create({
     container: {
         flexGrow:1,
-        backgroundColor: '#000',
+        backgroundColor: '#1a1a2e',
     },
 
-    text: {
-        color:'#ffffff',
-        alignSelf:'center',
-        paddingTop:15,
-        paddingBottom:50,
-        fontSize:18
-    },
-    SMStext: {
-        color:'#ffffff',
-        paddingTop:5,
-        fontSize:17
-    },
-
-    CheckBox: {
-        backgroundColor:'#ffffff',
-        alignSelf:'flex-end',
-    },
-    
-    checkboxContainer: {
-        color:'#ffffff',
-        alignSelf:'center',
-        flexDirection: "row",
-        paddingBottom:10,
-        marginTop: 20
-      },
     
     inputBox: {
         alignSelf:'stretch',
@@ -104,8 +79,8 @@ const styles = StyleSheet.create({
     },
 
     button: {
-        backgroundColor:'#00008d',
-        borderRadius: 40,
+        backgroundColor:'#e94560',
+        borderRadius: 8,
         color: '#ffffff',
         marginVertical: 15,
         textAlign:'center',

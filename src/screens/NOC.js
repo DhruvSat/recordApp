@@ -1,4 +1,4 @@
-import React  from "react";
+import React, { useState } from "react";
 import {
     Text,
     StyleSheet,
@@ -7,61 +7,52 @@ import {
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
+    CheckBox
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-const ReportCrime = () => {
+const NOC = () => {
+    const [isSelected, setSelection] = useState(false);
     
     return (
         <View style={styles.container}>
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                    <TouchableOpacity >
-                        <Text style={{textAlign:'center',height:30,fontSize:20,color:'#ffffff',backgroundColor:'red',alignSelf:'stretch'}}>Emergency Dial: 112</Text> 
-                    </TouchableOpacity>
-                    
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Select Crime Type'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
-
-                    />
-                    <View style={{flexDirection:'row'}}>
-                        <TouchableOpacity>
-                            <Text style={styles.imageBtn}>
-                                <Icon name="camera" size={30} color="#ffffff"/>
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text style={styles.imageBtn}>
-                                <Icon name="video-camera" size={30} color="#ffffff" />
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Remark'
+                     placeholder = '*Noc For'
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Mobile Number'
-                     placeholderTextColor='#ffffff' 
-                     keyboardType='number-pad'                    
-                     underlineColorAndroid={'transparent'}
-                    />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Select Police District'
+                     placeholder = '*Select City'
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
-                    
                     <TextInput style={styles.inputBox}
                      placeholder = '*Select Police Station'
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Purpose of NOC'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Aadhar Card Number'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <View style= {styles.checkboxContainer}>
+                    <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    tintColors={{ true: '#ffffff', false: 'black' }}
+                    style={styles.checkbox}
+                    />
+                    <Text style={styles.SMStext}>Terms & Conditions </Text>
+                    </View>
 
                     <TouchableOpacity style={styles.button}>
                         <Text style={styles.buttonText}> SUBMIT </Text>
@@ -77,7 +68,34 @@ const styles = StyleSheet.create({
     container: {
         flexGrow:1,
         backgroundColor: '#1a1a2e',
+        paddingVertical:50
     },
+
+    text: {
+        color:'#ffffff',
+        alignSelf:'center',
+        paddingTop:15,
+        paddingBottom:50,
+        fontSize:18
+    },
+    SMStext: {
+        color:'#ffffff',
+        paddingTop:5,
+        fontSize:17
+    },
+
+    CheckBox: {
+        backgroundColor:'#ffffff',
+        alignSelf:'flex-end',
+    },
+    
+    checkboxContainer: {
+        color:'#ffffff',
+        alignSelf:'center',
+        flexDirection: "row",
+        paddingBottom:10,
+        marginTop: 20
+      },
     
     inputBox: {
         alignSelf:'stretch',
@@ -110,13 +128,6 @@ const styles = StyleSheet.create({
         width:100,
         alignSelf:'center',
     },
-
-    imageBtn:{
-        flex:1,
-        marginLeft:35,
-        paddingTop:20,
-        justifyContent:'space-between'
-    }
 })
 
-export default ReportCrime;
+export default NOC;
