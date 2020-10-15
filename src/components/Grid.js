@@ -8,12 +8,14 @@ const numColumns = 3;
 function renderItem({ item }) {
     return (
         <TouchableOpacity style={{
+            alignSelf: 'center',
             flex: 1 / 3,
         }}>
             <Image
                 source={{ uri: item, }}
-                style={{ margin: 3, marginVertical: 5, aspectRatio: 1, flex: 1 / numColumns, overflow: "hidden", borderRadius: 8 }}
+                style={{ margin: 3, marginVertical: 5, aspectRatio: 1, flex: 1 / numColumns, overflow: "hidden", borderRadius: 8, borderWidth: 3, borderColor: 'black' }}
             />
+            <Text style={{ alignSelf: 'center' }}>Dwarcash</Text>
         </TouchableOpacity>
 
 

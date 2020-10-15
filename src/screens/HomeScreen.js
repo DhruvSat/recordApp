@@ -2,10 +2,12 @@ import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native'
 import Grid from '../components/Grid'
 import News from '../components/News'
+import Header from 'react-native-elements'
 
 export default function HomeScreen({ navigation }) {
     return (
         <ScrollView >
+            
             <News />
             <Grid />
             <TouchableOpacity style={styles.button}
