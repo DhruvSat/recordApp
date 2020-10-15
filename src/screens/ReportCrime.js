@@ -28,10 +28,14 @@ const ReportCrime = () => {
                      underlineColorAndroid={'transparent'}
 
                     />
-                    <View>
+                    <View style={{flexDirection:'row'}}>
                         <TouchableOpacity>
                             <Text style={styles.imageBtn}>
                                 <Icon name="camera" size={30} color="#ffffff"/>
+                            </Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity>
+                            <Text style={styles.imageBtn}>
                                 <Icon name="video-camera" size={30} color="#ffffff" />
                             </Text>
                         </TouchableOpacity>
@@ -110,12 +114,11 @@ const styles = StyleSheet.create({
 
     imageBtn:{
         flex:1,
-        alignSelf:'center',
+        // // alignSelf:'center',
+        marginLeft:35,
         paddingTop:20,
         justifyContent:'space-between'
     }
-
-
 })
 
 export default ReportCrime;

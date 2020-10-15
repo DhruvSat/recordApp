@@ -10,7 +10,6 @@ import {
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
-    Button
 } from 'react-native';
 
 

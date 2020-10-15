@@ -1,17 +1,20 @@
 import React from 'react';
+import { StatusBar } from 'react-native'
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import WomenSaftey from '../screens/WomenSaftey';
 import ComplaintRegister from '../screens/ComplaintRegister';
 import ReportCrime from '../screens/ReportCrime';
+import ViewFirDetail from '../screens/ViewFirDetail';
 import { color } from 'react-native-reanimated';
 
 const Stack = createStackNavigator();
 
 export default function HomeStack() {
     return (
-        <Stack.Navigator>
+        
+        <Stack.Navigator>     
             <Stack.Screen name='HomeScreen' component={HomeScreen}
             options={{
                 title: 'Home Screen',
@@ -22,11 +25,12 @@ export default function HomeStack() {
                   color:'#ffffff'
                 },
                 headerTitleAlign:'center',
+                
               }} 
             />
             <Stack.Screen name='ProfileScreen' component={ProfileScreen}
             options={{
-                title: 'Profile Section',
+                title: 'PROFILE',
                 headerStyle: {
                   backgroundColor: '#00008d',
                 },
@@ -62,7 +66,7 @@ export default function HomeStack() {
               }}/>
             <Stack.Screen name='ReportCrime' component={ReportCrime} 
             options={{
-                title: 'ReportCrime',
+                title: 'REPORT CRIME',
                 headerStyle: {
                   backgroundColor: '#00008d',
                 },
@@ -72,8 +76,19 @@ export default function HomeStack() {
                 headerTitleAlign:'center',
                 headerTintColor: 'white'
               }}/>
-            <Stack.Screen name='HomeScreen' component={HomeScreen} />
-            <Stack.Screen name='ProfileScreen' component={ProfileScreen} />
+            <Stack.Screen name='ViewFirDetail' component={ViewFirDetail} 
+            options={{
+                title: 'View FIR Detail',
+                headerStyle: {
+                  backgroundColor: '#00008d',
+                },
+                headerTitleStyle: {
+                  color:'#ffffff'
+                },
+                headerTitleAlign:'center',
+                headerTintColor: 'white'
+              }}/>
+            
         </Stack.Navigator>
     );
 }

@@ -1,55 +1,14 @@
-import React, { useState } from 'react'
-import auth from '@react-native-firebase/auth'
-import firestore from '@react-native-firebase/firestore'
+import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native'
-import Grid from '../components/Grid'
-import News from '../components/News'
+// import Grid from '../components/Grid'
 // import News from '../components/News'
 
-
-
-
-const HomeScreen = (props,{navigation}) => {
-
-    const userID = props.extraData.uid;
-
-    const [userEmail, setUserEmail] = useState('')
-    const [userName, setUserName] = useState('')
-    const [userPhone, setUserPhone] = useState('')
-
-    const onLogoutPress = () => {
-        auth()
-            .signOut()
-            .then(() => alert('Logged out successfully'));
-    }
-
-    //fetching user data by user id
-    firestore()
-        .collection('users')
-        .doc(userID)
-        .get()
-        .then(documentSnapshot => {
-            if (documentSnapshot.exists) {
-                setUserName(documentSnapshot.data().fullName)
-                setUserEmail(documentSnapshot.data().email)
-                setUserPhone(documentSnapshot.data().phone)
-            }
-        });
-
-
+export default function HomeScreen({ navigation }) {
     return (
-        <View>
+        <View style={styles.container}>
+        <ScrollView  >
             {/* <News /> */}
-
-            <Text>Email:{userEmail}</Text>
-            <Text>Name:{userName}</Text>
-            <Text>Phone:{userPhone}</Text>
-
-            <TouchableOpacity style={styles.button}
-                onPress={() => onLogoutPress()}>
-
-                <Text style={styles.buttonText}> LOG OUT </Text>
-            </TouchableOpacity>
+            {/* <Grid /> */}
             <TouchableOpacity style={styles.button}
                 onPress={() => { navigation.navigate('ProfileScreen') }}>
                 <Text style={styles.buttonText}> PROFILE </Text>
@@ -66,24 +25,22 @@ const HomeScreen = (props,{navigation}) => {
                 onPress={() => { navigation.navigate('ComplaintRegister') }}>
                 <Text style={styles.buttonText}> complaint </Text>
             </TouchableOpacity>
-        </View>
-    )
-export default function HomeScreen({ navigation }) {
-    return (
-        <ScrollView >
-            <News />
-            <Grid />
             <TouchableOpacity style={styles.button}
-                onPress={() => { navigation.navigate('ProfileScreen') }}>
-                <Text style={styles.buttonText}> GO TO PROFILE </Text>
+                onPress={() => { navigation.navigate('ViewFirDetail') }}>
+                <Text style={styles.buttonText}> FIR </Text>
             </TouchableOpacity>
         </ScrollView>
-
+        </View>
     )
 
-}}
+}
 
 const styles = StyleSheet.create({
+    container: {
+        flexGrow:1,
+        backgroundColor: '#000',
+    },
+
     button: {
         backgroundColor: '#00008d',
         borderRadius: 40,
@@ -104,4 +61,3 @@ const styles = StyleSheet.create({
         textAlign:'center'
     },
 })
-

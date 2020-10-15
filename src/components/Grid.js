@@ -3,7 +3,7 @@ import { View, Text, Image, FlatList, Dimensions, StyleSheet, TouchableOpacity }
 
 
 const picsumImages = new Array(11).fill("http://placeimg.com/640/360/any");
-const numColumns = 3;
+const numoClumns = 3;
 
 function renderItem({ item }) {
     return (

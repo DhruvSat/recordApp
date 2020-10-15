@@ -7,57 +7,38 @@ import {
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
-    CheckBox
+    Image
 } from 'react-native';
 
 
-const ComplaintRegister = () => {
-    
+const ViewFirDetail = () => {    
     return (
         <View style={styles.container}>
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
-                    
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Complaintant Name'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
-                    />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Complaintant Mobile Number'
-                     placeholderTextColor='#ffffff'
-                     keyboardType='number-pad'                     
-                     underlineColorAndroid={'transparent'}
-                    />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Date (DD/MM/YYYY)'
-                     placeholderTextColor='#ffffff'
-                     underlineColorAndroid={'transparent'}
-                    />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Place of Occurence'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
-                    />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Type of Complaint'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
-                    />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Complaintant Address'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
-                    />
-                    
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Complaint Description'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
-                    />
 
+                    <Image style={{ width: 250, height:90, resizeMode: 'contain', marginTop: 70, marginBottom: 40, alignSelf: 'center' }}
+                        source={require('../../assets/logo.png')}
+                    />
+                    
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Remarks'
+                     placeholder = '*Enter FIR Number'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Select Year'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Select District'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Select Police Station'
+                     keyboardType='number-pad'
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
@@ -76,8 +57,33 @@ const styles = StyleSheet.create({
     container: {
         flexGrow:1,
         backgroundColor: '#000',
-        alignSelf:'stretch'
     },
+
+    text: {
+        color:'#ffffff',
+        alignSelf:'center',
+        paddingTop:15,
+        paddingBottom:50,
+        fontSize:18
+    },
+    SMStext: {
+        color:'#ffffff',
+        paddingTop:5,
+        fontSize:17
+    },
+
+    CheckBox: {
+        backgroundColor:'#ffffff',
+        alignSelf:'flex-end',
+    },
+    
+    checkboxContainer: {
+        color:'#ffffff',
+        alignSelf:'center',
+        flexDirection: "row",
+        paddingBottom:10,
+        marginTop: 20
+      },
     
     inputBox: {
         alignSelf:'stretch',
@@ -112,4 +118,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default ComplaintRegister;
+export default ViewFirDetail;

@@ -21,16 +21,8 @@ const WomenSaftey = () => {
                     
                     <Text style={styles.text}>Feel Safe. Travel Safe with Gujarat Police</Text>
                     
-                    <View style={styles.checkboxContainer}>
-                        <Text style={styles.SMStext}>SMS Tracking</Text>
-                        <CheckBox
-                        value={isSelected}
-                        onValueChange={setSelection}
-                        style={styles.checkbox}
-                        />
-                        
-                    </View>
-                    <Text style={{fontSize:20,fontWeight:'bold',color:'#00008d',alignSelf:'center'}}>
+                 
+                    <Text style={{fontSize:25,fontWeight:'bold',color:'#fff',alignSelf:'center'}}>
                          Travel Details </Text>
                     
                     <TextInput style={styles.inputBox}
@@ -54,6 +46,15 @@ const WomenSaftey = () => {
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
+                    <View style= {styles.checkboxContainer}>
+                    <Text style={styles.SMStext}>SMS Tracking</Text>
+                    <CheckBox
+                    value={isSelected}
+                    onValueChange={setSelection}
+                    tintColors={{ true: '#ffffff', false: 'black' }}
+                    style={styles.checkbox}
+                    />
+                    </View>
 
                     <TouchableOpacity style={styles.button}>
                         <Text style={styles.buttonText}> SUBMIT </Text>
@@ -69,7 +70,6 @@ const styles = StyleSheet.create({
     container: {
         flexGrow:1,
         backgroundColor: '#000',
-        alignSelf:'stretch'
     },
 
     text: {
@@ -87,14 +87,15 @@ const styles = StyleSheet.create({
 
     CheckBox: {
         backgroundColor:'#ffffff',
-		alignSelf:'flex-end'
+        alignSelf:'flex-end',
     },
     
     checkboxContainer: {
         color:'#ffffff',
         alignSelf:'center',
         flexDirection: "row",
-        paddingBottom:10
+        paddingBottom:10,
+        marginTop: 20
       },
     
     inputBox: {
