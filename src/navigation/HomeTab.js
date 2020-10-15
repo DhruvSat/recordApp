@@ -1,31 +1,64 @@
 import React from 'react';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ServiceScreen from '../screens/ServiceScreen';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+// import ServiceScreen from '../screens/ReportMissingPerson';
 import HomeStack from './HomeStack';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/Ionicons';
+// import Icon from 'react-native-vector-icons/FontAwesome';
+// import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 
-const AppTabs = createBottomTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 export default function HomeTab() {
     return (
-        <AppTabs.Navigator>
-            <AppTabs.Screen
-                options={{
-                    tabBarIcon: ({ color }) => <Ionicons name="home" size={30} color={color} />
-                }}
-                name="Home"
-                component={HomeStack}
-            />
-            <AppTabs.Screen
-                options={{
-                    tabBarIcon: ({ color }) => <MaterialIcons name="miscellaneous-services" size={30} color={color} />
-                }}
-                name="Service"
-                component={ServiceScreen}
-            />
-        </AppTabs.Navigator>
-    )
-
+        <Tab.Navigator
+        initialRouteName="Home"
+        activeColor="#fff"
+        >
+      <Tab.Screen
+        name="Home"
+        component={HomeStack}
+        options={{
+          tabBarLabel: '',
+          tabBarColor: '#0f3460',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={HomeStack}
+        options={{
+          tabBarLabel: '',
+          tabBarColor: '#0f3460',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-notifications" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={HomeStack}
+        options={{
+          tabBarLabel: '',
+          tabBarColor: '#0f3460',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-person" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Explore"
+        component={HomeStack}
+        options={{
+          tabBarLabel: '',
+          tabBarColor: '#0f3460',
+          tabBarIcon: ({ color }) => (
+            <Icon name="ios-aperture" color={color} size={26} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+);
 }

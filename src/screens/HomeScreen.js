@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native'
-// import Grid from '../components/Grid'
-// import News from '../components/News'
+import Grid from '../components/Grid'
+import News from '../components/News'
 
 export default function HomeScreen({ navigation }) {
     return (
@@ -13,6 +13,18 @@ export default function HomeScreen({ navigation }) {
             <TouchableOpacity style={styles.button}
                 onPress={() => { navigation.navigate('ProfileScreen') }}>
                 <Text style={styles.buttonText}> PROFILE </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('NOC') }}>
+                <Text style={styles.buttonText}> NOC </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('PVC') }}>
+                <Text style={styles.buttonText}> PVC </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('ReportMissingPerson') }}>
+                <Text style={styles.buttonText}> MISSING </Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}
                 onPress={() => { navigation.navigate('WOMEN SAFTEY') }}>
@@ -39,12 +51,12 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
     container: {
         flexGrow:1,
-        backgroundColor: '#000',
+        backgroundColor: '#1a1a2e',
     },
 
     button: {
-        backgroundColor: '#00008d',
-        borderRadius: 40,
+        backgroundColor: '#e94560',
+        borderRadius: 8,
         color: '#ffffff',
         marginVertical: 15,
         textAlign: 'center',
