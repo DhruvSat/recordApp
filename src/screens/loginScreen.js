@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import auth from '@react-native-firebase/auth'
-import firestore from '@react-native-firebase/firestore'
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../navigation/AuthProvider';
 
 import {
     Text,
@@ -22,32 +21,7 @@ const LoginScreen = ({ navigation }) => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
-    const onLoginPress = () => {
-
-        auth().signInWithEmailAndPassword(email, password)
-            .then((response) => {
-                const uid = response.user.uid
-                const usersRef = firestore().collection('users')
-                usersRef.doc(uid).get()
-                    .then(firestoreDocument => {
-                        if (!firestoreDocument.exists) {
-                            alert("User does not exist anymore.")
-                            return;
-                        }
-                        const user = firestoreDocument.data()
-                        navigation.navigate('HomeScreen', { user })
-                    })
-                    .catch(error => {
-                        alert(error)
-                    });
-            })
-            .catch(error => {
-                alert(error)
-            })
-    }
-
-
+    const { login } = useContext(AuthContext);
 
     return (
         <View style={styles.container}>
@@ -79,7 +53,7 @@ const LoginScreen = ({ navigation }) => {
                     </TouchableOpacity>
 
                     <TouchableOpacity style={styles.button}
-                        onPress={() => onLoginPress()}>
+                        onPress={() => login(email, password)}>
                         <Text style={styles.buttonText}> LOG IN </Text>
                     </TouchableOpacity>
 

@@ -1,3 +1,5 @@
+import React from 'react';
+import Providers from './src/navigation';
 
 import React, { useState, useEffect } from 'react';
 import auth from '@react-native-firebase/auth'
@@ -78,3 +80,6 @@ function App() {
 
 
 export default App;
+export default function App() {
+    return <Providers />;
+}

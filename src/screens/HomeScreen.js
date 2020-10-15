@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import auth from '@react-native-firebase/auth'
 import firestore from '@react-native-firebase/firestore'
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native'
+import Grid from '../components/Grid'
+import News from '../components/News'
 // import News from '../components/News'
 
 
@@ -65,10 +67,21 @@ const HomeScreen = (props,{navigation}) => {
                 <Text style={styles.buttonText}> complaint </Text>
             </TouchableOpacity>
         </View>
+    )
+export default function HomeScreen({ navigation }) {
+    return (
+        <ScrollView >
+            <News />
+            <Grid />
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('ProfileScreen') }}>
+                <Text style={styles.buttonText}> GO TO PROFILE </Text>
+            </TouchableOpacity>
+        </ScrollView>
 
     )
 
-}
+}}
 
 const styles = StyleSheet.create({
     button: {
@@ -92,4 +105,3 @@ const styles = StyleSheet.create({
     },
 })
 
-export default HomeScreen

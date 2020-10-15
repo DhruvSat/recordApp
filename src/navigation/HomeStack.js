@@ -72,6 +72,8 @@ export default function HomeStack() {
                 headerTitleAlign:'center',
                 headerTintColor: 'white'
               }}/>
+            <Stack.Screen name='HomeScreen' component={HomeScreen} />
+            <Stack.Screen name='ProfileScreen' component={ProfileScreen} />
         </Stack.Navigator>
     );
 }
