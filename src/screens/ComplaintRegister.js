@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
     Text,
     StyleSheet,
@@ -13,8 +13,7 @@ import { AuthContext } from '../navigation/AuthProvider';
 import firestore from '@react-native-firebase/firestore';
 
 
-
-const ComplaintRegister = () => {
+const ComplaintRegister = ({ navigation }) => {
 
     const { user } = useContext(AuthContext);
 
@@ -27,21 +26,28 @@ const ComplaintRegister = () => {
     const [cDesc, setCDesc] = useState('')
     const [cRemarks, setCRemarks] = useState('')
 
-    const uploader = () => {
-        firestore.collection("complaints").doc(formData.id).set(formData).then(function () {
+    const uploader = (formData) => {
+        firestore().collection("complaints").doc(formData.id).set(formData).then(function () {
             console.log("Document successfully written!");
+            navigation.navigate('Success');
         });
+    }
+
+    const resetForm = () => {
+        setCName('');
+        setCMobile('');
+        setCDate('');
+        setCPlace('');
+        setCType('');
+        setCAddress('');
+        setCDesc('');
+        setCRemarks('');
     }
 
     const onSubmitPress = () => {
 
-        const formIDGen = () => {
-            var crypto = require("crypto");
-            var formID = crypto.randomBytes(20).toString('hex');
-            return formID
-        }
+
         var formData = {
-            id: formIDGen(),
             cUID: user.uid,
             cName: cName,
             cMobile: cMobile,
@@ -52,7 +58,8 @@ const ComplaintRegister = () => {
             cDesc: cDesc,
             cRemarks: cRemarks,
         }
-        uploader(formData)
+        uploader(formData);
+        resetForm();
     }
 
 

@@ -10,6 +10,10 @@ target 'recordApp' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
+  pod 'react-native-simple-crypto', :path => '../node_modules/react-native-simple-crypto'
+
+  pod 'lottie-react-native', :path => '../node_modules/lottie-react-native'
+
   target 'recordAppTests' do
     inherit! :complete
     # Pods for testing
