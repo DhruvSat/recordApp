@@ -10,7 +10,6 @@ import {
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
-    Button
 } from 'react-native';
 
 
@@ -103,7 +102,7 @@ const styles = StyleSheet.create({
         marginVertical: 15,
         textAlign: 'center',
         paddingVertical: 9,
-        height: 45,
+        height: 40,
         marginTop: 20,
         marginBottom: 20,
         width: 100,

@@ -37,7 +37,7 @@ const ProfileScreen = ({ navigation }) => {
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}
                 onPress={() => { navigation.navigate('SettingScreen') }}>
-                <Text style={styles.buttonText}> GO TO Settings </Text>
+                <Text style={styles.buttonText}> Settings </Text>
             </TouchableOpacity>
         </View>
     )
@@ -50,11 +50,17 @@ const styles = StyleSheet.create({
         marginVertical: 15,
         textAlign: 'center',
         paddingVertical: 9,
-        height: 45,
+        height: 40,
         marginTop: 20,
         marginBottom: 20,
         width: 100,
         alignSelf: 'center',
+    },
+    buttonText: {
+        fontSize:15,
+        fontWeight:'500',
+        color:'#ffffff',
+        textAlign:'center'
     },
 })
 
