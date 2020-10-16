@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 
-const WomenSaftey = () => {
+const SafteyGrid3 = () => {
     const [isSelected, setSelection] = useState(false);
     
     return (
@@ -24,6 +24,21 @@ const WomenSaftey = () => {
                     <Text style={{fontSize:25,fontWeight:'bold',color:'#fff',alignSelf:'center'}}>
                          Travel Details </Text>
                     
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Name'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Mobile Number'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Address'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
                     <TextInput style={styles.inputBox}
                      placeholder = '*Place of Boarding'
                      placeholderTextColor='#ffffff'                     
@@ -45,15 +60,6 @@ const WomenSaftey = () => {
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
-                    <View style= {styles.checkboxContainer}>
-                    <Text style={styles.SMStext}>SMS Tracking</Text>
-                    <CheckBox
-                    value={isSelected}
-                    onValueChange={setSelection}
-                    tintColors={{ true: '#ffffff', false: 'black' }}
-                    style={styles.checkbox}
-                    />
-                    </View>
 
                     <TouchableOpacity style={styles.button}>
                         <Text style={styles.buttonText}> SUBMIT </Text>
@@ -130,4 +136,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default WomenSaftey;
+export default SafteyGrid3;

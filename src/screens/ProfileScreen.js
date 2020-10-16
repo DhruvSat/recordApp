@@ -26,8 +26,8 @@ const ProfileScreen = ({ navigation }) => {
         });
 
     return (
-        <View>
-            <Text>Email:{userEmail}</Text>
+        <View style={styles.container}>
+            <Text >Email:{userEmail}</Text>
             <Text>Name:{userName}</Text>
             <Text>Phone:{userPhone}</Text>
 
@@ -35,14 +35,14 @@ const ProfileScreen = ({ navigation }) => {
                 onPress={() => logout()}>
                 <Text style={styles.buttonText}> LOG OUT </Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button}
-                onPress={() => { navigation.navigate('SettingScreen') }}>
-                <Text style={styles.buttonText}> Settings </Text>
-            </TouchableOpacity>
         </View>
     )
 }
 const styles = StyleSheet.create({
+    container: {
+        flexGrow:1,
+        backgroundColor: '#1a1a2e',
+    },
     button: {
         backgroundColor: '#e94560',
         borderRadius: 8,

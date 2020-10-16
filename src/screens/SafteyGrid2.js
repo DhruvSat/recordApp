@@ -1,4 +1,4 @@
-import React  from "react";
+import React, { useState } from "react";
 import {
     Text,
     StyleSheet,
@@ -7,75 +7,56 @@ import {
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
-    Linking,
-    Platform,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import CheckBox from '@react-native-community/checkbox';
 
-
-
-const ReportCrime = () => {
-
-    dialCall = () => {
-
-        let phoneNumber = '';
-    
-        if (Platform.OS === 'android') {
-          phoneNumber = 'tel:${112}';
-        }
-        else {
-          phoneNumber = 'telprompt:${112}';
-        }
-    
-        Linking.openURL(phoneNumber);
-      };
+const SafteyGrid2 = () => {
+    const [isSelected, setSelection] = useState(false);
     
     return (
         <View style={styles.container}>
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
-
-                    <TouchableOpacity onPress={dialCall}>
-                        <Text style={{textAlign:'center',height:30,fontSize:20,color:'#ffffff',backgroundColor:'red',alignSelf:'stretch'}}>Emergency Dial: 112</Text> 
-                    </TouchableOpacity>
+                    
+                    <Text style={styles.text}>Feel Safe. Travel Safe with Gujarat Police</Text>
+                    
+                 
+                    <Text style={{fontSize:25,fontWeight:'bold',color:'#fff',alignSelf:'center'}}>
+                         Travel Details </Text>
                     
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Select Crime Type'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
-
-                    />
-                    <View style={{flexDirection:'row'}}>
-                        <TouchableOpacity>
-                            <Text style={styles.imageBtn}>
-                                <Icon name="camera" size={30} color="#ffffff"/>
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text style={styles.imageBtn}>
-                                <Icon name="video-camera" size={30} color="#ffffff" />
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Remark'
+                     placeholder = '*Name'
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
                      placeholder = '*Mobile Number'
-                     placeholderTextColor='#ffffff' 
-                     keyboardType='number-pad'                    
-                     underlineColorAndroid={'transparent'}
-                    />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Select Police District'
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
-                    
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Select Police Station'
+                     placeholder = '*Address'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Place of Boarding'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Place of Destination'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Vehical Number (ex. GJ05AA0000)'
+                     placeholderTextColor='#ffffff'                     
+                     underlineColorAndroid={'transparent'}
+                    />
+                    <TextInput style={styles.inputBox}
+                     placeholder = '*Emergency Contact Number'
+                     keyboardType='number-pad'
                      placeholderTextColor='#ffffff'                     
                      underlineColorAndroid={'transparent'}
                     />
@@ -95,6 +76,32 @@ const styles = StyleSheet.create({
         flexGrow:1,
         backgroundColor: '#1a1a2e',
     },
+
+    text: {
+        color:'#ffffff',
+        alignSelf:'center',
+        paddingTop:15,
+        paddingBottom:50,
+        fontSize:18
+    },
+    SMStext: {
+        color:'#ffffff',
+        paddingTop:5,
+        fontSize:17
+    },
+
+    CheckBox: {
+        backgroundColor:'#ffffff',
+        alignSelf:'flex-end',
+    },
+    
+    checkboxContainer: {
+        color:'#ffffff',
+        alignSelf:'center',
+        flexDirection: "row",
+        paddingBottom:10,
+        marginTop: 20
+      },
     
     inputBox: {
         alignSelf:'stretch',
@@ -127,13 +134,6 @@ const styles = StyleSheet.create({
         width:100,
         alignSelf:'center',
     },
-
-    imageBtn:{
-        flex:1,
-        marginLeft:35,
-        paddingTop:20,
-        justifyContent:'space-between'
-    }
 })
 
-export default ReportCrime;
+export default SafteyGrid2;

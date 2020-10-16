@@ -2,6 +2,8 @@ import React from 'react';
 // import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import HomeStack from './HomeStack';
+import ProfileScreen from '../screens/ProfileScreen';
+import SettingScreen from '../screens/SettingScreen';
 import Icon from 'react-native-vector-icons/Ionicons';
 // import Icon from 'react-native-vector-icons/FontAwesome';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
@@ -38,7 +40,7 @@ export default function HomeTab() {
       />
       <Tab.Screen
         name="Profile"
-        component={HomeStack}
+        component={ProfileScreen}
         options={{
           tabBarLabel: '',
           tabBarColor: '#0f3460',
@@ -48,8 +50,8 @@ export default function HomeTab() {
         }}
       />
       <Tab.Screen
-        name="Explore"
-        component={HomeStack}
+        name="Settings"
+        component={SettingScreen}
         options={{
           tabBarLabel: '',
           tabBarColor: '#0f3460',

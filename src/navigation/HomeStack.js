@@ -1,18 +1,18 @@
 import React from 'react';
-import { StatusBar } from 'react-native'
-import { createStackNavigator } from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { createStackNavigator, } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
-import WomenSaftey from '../screens/WomenSaftey';
+import SafteyGrid1 from '../screens/SafteyGrid1';
+import SafteyGrid2 from '../screens/SafteyGrid2';
 import ComplaintRegister from '../screens/ComplaintRegister';
 import ReportCrime from '../screens/ReportCrime';
 import ViewFirDetail from '../screens/ViewFirDetail';
-import { color } from 'react-native-reanimated';
 import SuccessPage from '../components/SuccessPage';
 import ReportMissingPerson from '../screens/ReportMissingPerson';
 import NOC from '../screens/NOC';
 import PVC from '../screens/PVC';
-import Grid from "../components/Grid";
+import SafteyGrid3 from '../screens/SafteyGrid3';
 
 const Stack = createStackNavigator();
 
@@ -30,7 +30,6 @@ export default function HomeStack() {
             color: '#ffffff'
           },
           headerTitleAlign: 'center',
-
         }}
       />
       <Stack.Screen name='ProfileScreen' component={ProfileScreen}
@@ -45,7 +44,31 @@ export default function HomeStack() {
           headerTitleAlign: 'center',
           headerTintColor: 'white'
         }} />
-      <Stack.Screen name='WOMEN SAFTEY' component={WomenSaftey}
+      <Stack.Screen name='WOMEN SAFTEY1' component={SafteyGrid1}
+        options={{
+          title: 'WOMEN SAFTEY1',
+          headerStyle: {
+            backgroundColor: '#0f3460',
+          },
+          headerTitleStyle: {
+            color: '#ffffff'
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: 'white'
+        }} />
+      <Stack.Screen name='WOMEN SAFTEY2' component={SafteyGrid2}
+        options={{
+          title: 'WOMEN SAFTEY2',
+          headerStyle: {
+            backgroundColor: '#0f3460',
+          },
+          headerTitleStyle: {
+            color: '#ffffff'
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: 'white'
+        }} />
+      <Stack.Screen name='WOMEN SAFTEY3' component={SafteyGrid3}
         options={{
           title: 'WOMEN SAFTEY',
           headerStyle: {
