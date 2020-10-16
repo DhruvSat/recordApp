@@ -36,9 +36,18 @@ const RegisterScreen = ({ navigation }) => {
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                    <Text style={{ fontSize: 25, color: '#ffffff', alignSelf: 'center', marginTop: 90 }}>SignUp</Text>
+                    <Text
+                        style={{
+                            fontSize: 25,
+                            color: '#ffffff',
+                            alignSelf: 'center',
+                            marginTop: 90
+                        }}>
+                        SignUp
+                    </Text>
 
-                    <TextInput style={styles.inputBox1}
+                    <TextInput
+                        style={styles.inputBox1}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Name'
                         placeholderTextColor='#ffffff'
@@ -46,7 +55,8 @@ const RegisterScreen = ({ navigation }) => {
                         value={fullName}
                     />
 
-                    <TextInput style={styles.inputBox}
+                    <TextInput
+                        style={styles.inputBox}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Email'
                         placeholderTextColor='#ffffff'
@@ -54,7 +64,8 @@ const RegisterScreen = ({ navigation }) => {
                         value={email}
                     />
 
-                    <TextInput style={styles.inputBox}
+                    <TextInput
+                        style={styles.inputBox}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Mobile No.'
                         placeholderTextColor='#ffffff'
@@ -62,7 +73,8 @@ const RegisterScreen = ({ navigation }) => {
                         value={phone}
                     />
 
-                    <TextInput style={styles.inputBox}
+                    <TextInput
+                        style={styles.inputBox}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Password'
                         secureTextEntry={true}
@@ -71,7 +83,8 @@ const RegisterScreen = ({ navigation }) => {
                         placeholderTextColor='#ffffff'
                     />
 
-                    <TextInput style={styles.inputBox}
+                    <TextInput
+                        style={styles.inputBox}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Confirm Password'
                         secureTextEntry={true}
@@ -89,7 +102,8 @@ const RegisterScreen = ({ navigation }) => {
 
                     <View style={styles.registerHere}>
                         <Text style={styles.inputText}>Already have an Account? </Text>
-                        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}><Text style={styles.registerButton}> Login </Text></TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}><Text style={styles.registerButton}> Login </Text>
+                        </TouchableOpacity>
                     </View>
                 </KeyboardAvoidingView>
 

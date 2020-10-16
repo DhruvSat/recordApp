@@ -15,51 +15,57 @@ import CheckBox from '@react-native-community/checkbox';
 
 const PVC = () => {
     const [isSelected, setSelection] = useState(false);
-    
+
     return (
         <View style={styles.container}>
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Purpose for PVC'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                    <TextInput
+                        style={styles.inputBox}
+                        placeholder='*Purpose for PVC'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Select City'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                    <TextInput
+                        style={styles.inputBox}
+                        placeholder='*Select City'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Select Police Station'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                    <TextInput
+                        style={styles.inputBox}
+                        placeholder='*Select Police Station'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Address'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                    <TextInput
+                        style={styles.inputBox}
+                        placeholder='*Address'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Passport Number'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                    <TextInput
+                        style={styles.inputBox}
+                        placeholder='*Passport Number'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
-                    <TextInput style={styles.inputBox}
-                     placeholder = '*Aadhar Card Number'
-                     placeholderTextColor='#ffffff'
-                     keyboardType='number-pad'                     
-                     underlineColorAndroid={'transparent'}
+                    <TextInput
+                        style={styles.inputBox}
+                        placeholder='*Aadhar Card Number'
+                        placeholderTextColor='#ffffff'
+                        keyboardType='number-pad'
+                        underlineColorAndroid={'transparent'}
                     />
-                    <View style= {styles.checkboxContainer}>
-                    <CheckBox
-                    value={isSelected}
-                    onValueChange={setSelection}
-                    tintColors={{ true: '#ffffff', false: 'black' }}
-                    style={styles.checkbox}
-                    />
-                    <Text style={styles.SMStext}>Terms & Conditions </Text>
+                    <View style={styles.checkboxContainer}>
+                        <CheckBox
+                            value={isSelected}
+                            onValueChange={setSelection}
+                            tintColors={{ true: '#ffffff', false: 'black' }}
+                            style={styles.checkbox}
+                        />
+                        <Text style={styles.SMStext}>Terms & Conditions </Text>
                     </View>
 
                     <TouchableOpacity style={styles.button}>
@@ -74,67 +80,67 @@ const PVC = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flexGrow:1,
+        flexGrow: 1,
         backgroundColor: '#1a1a2e',
-        paddingVertical:50
+        paddingVertical: 50
     },
 
     text: {
-        color:'#ffffff',
-        alignSelf:'center',
-        paddingTop:15,
-        paddingBottom:50,
-        fontSize:18
+        color: '#ffffff',
+        alignSelf: 'center',
+        paddingTop: 15,
+        paddingBottom: 50,
+        fontSize: 18
     },
     SMStext: {
-        color:'#ffffff',
-        paddingTop:5,
-        fontSize:17
+        color: '#ffffff',
+        paddingTop: 5,
+        fontSize: 17
     },
 
     CheckBox: {
-        backgroundColor:'#ffffff',
-        alignSelf:'flex-end',
+        backgroundColor: '#ffffff',
+        alignSelf: 'flex-end',
     },
-    
+
     checkboxContainer: {
-        color:'#ffffff',
-        alignSelf:'center',
+        color: '#ffffff',
+        alignSelf: 'center',
         flexDirection: "row",
-        paddingBottom:10,
+        paddingBottom: 10,
         marginTop: 20
-      },
-    
+    },
+
     inputBox: {
-        alignSelf:'stretch',
-        color:'#ffffff',
-        height:40,
-        marginTop:20,
-        borderBottomColor:'#ffffff',
-        borderBottomWidth:1,
-        width:330,
-        alignSelf:'center'
+        alignSelf: 'stretch',
+        color: '#ffffff',
+        height: 40,
+        marginTop: 20,
+        borderBottomColor: '#ffffff',
+        borderBottomWidth: 1,
+        width: 330,
+        alignSelf: 'center'
     },
 
     buttonText: {
-        fontSize:15,
-        fontWeight:'500',
-        color:'#ffffff',
-        textAlign:'center'
+        fontSize: 15,
+        fontWeight: '500',
+        color: '#ffffff',
+        textAlign: 'center'
     },
 
     button: {
-        backgroundColor:'#e94560',
+        backgroundColor: '#e94560',
         borderRadius: 8,
         color: '#ffffff',
         marginVertical: 15,
-        textAlign:'center',
+        textAlign: 'center',
         paddingVertical: 9,
         height: 40,
         marginTop: 30,
         marginBottom: 20,
-        width:100,
-        alignSelf:'center',
+        width: 100,
+        alignSelf: 'center',
     },
 })
 
