@@ -1,6 +1,4 @@
 import React, { useState, useContext } from 'react';
-// import auth from '@react-native-firebase/auth'
-// import firestore from '@react-native-firebase/firestore'
 import { AuthContext } from '../navigation/AuthProvider';
 import {
     Text,
