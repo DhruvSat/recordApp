@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../navigation/AuthProvider';
-
 import {
     Text,
     StyleSheet,
@@ -11,10 +10,6 @@ import {
     ScrollView,
     KeyboardAvoidingView,
 } from 'react-native';
-
-
-
-
 
 const LoginScreen = ({ navigation }) => {
 
@@ -27,11 +22,20 @@ const LoginScreen = ({ navigation }) => {
             <ScrollView keyboardShouldPersistTaps="handled">
                 <KeyboardAvoidingView enabled>
 
-                    <Image style={{ width: 250, height: 200, resizeMode: 'contain', marginTop: 90, marginBottom: 40, alignSelf: 'center' }}
+                    <Image
+                        style={{
+                            width: 250,
+                            height: 200,
+                            resizeMode: 'contain',
+                            marginTop: 90,
+                            marginBottom: 40,
+                            alignSelf: 'center'
+                        }}
                         source={require('../../assets/logo.png')}
                     />
 
-                    <TextInput style={styles.inputBox}
+                    <TextInput
+                        style={styles.inputBox}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Email'
                         placeholderTextColor='#ffffff'
@@ -39,7 +43,8 @@ const LoginScreen = ({ navigation }) => {
                         value={email}
                     />
 
-                    <TextInput style={styles.inputBox}
+                    <TextInput
+                        style={styles.inputBox}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Password'
                         secureTextEntry={true}

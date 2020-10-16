@@ -13,18 +13,25 @@ import ReportMissingPerson from '../screens/ReportMissingPerson';
 import NOC from '../screens/NOC';
 import PVC from '../screens/PVC';
 import SafteyGrid3 from '../screens/SafteyGrid3';
+import Grid from "../components/Grid";
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 const Stack = createStackNavigator();
 
-export default function HomeStack() {
+export default function HomeStack({ navigation }) {
   return (
 
     <Stack.Navigator>
       <Stack.Screen name='HomeScreen' component={HomeScreen}
         options={{
+          headerLeft: () => (
+            <Icon name="ios-menu" size={25} onPress={() => navigation.openDrawer()}></Icon>
+          ),
           title: 'Gujarat Citizen',
           headerStyle: {
             backgroundColor: '#0f3460',
+
           },
           headerTitleStyle: {
             color: '#ffffff'
