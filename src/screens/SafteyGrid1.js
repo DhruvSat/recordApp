@@ -13,7 +13,51 @@ import firestore from '@react-native-firebase/firestore';
 import CheckBox from '@react-native-community/checkbox';
 
 const SafteyGrid1 = () => {
-    const [isSelected, setSelection] = useState(false);
+
+    const { user } = useContext(AuthContext);
+
+    const [wsName, setWsName] = useState('')
+    const [wsMobile, setWsMobile] = useState('')
+    const [wsAddress, setWsAddress] = useState('')
+    const [bordPlace, setBordPlace] = useState('')
+    const [destPlace, setDestPlace] = useState('')
+    const [vhNum, setCRemarks] = useState('')
+
+    const uploader = (formData) => {
+        firestore().collection("complaints").doc(formData.id).set(formData).then(function () {
+            console.log("Document successfully written!");
+            navigation.navigate('Success');
+        });
+    }
+
+    const resetForm = () => {
+        setWsName('');
+        setWsMobile('');
+        setWsAddress('');
+        setBordPlace('');
+        setDestPlace('');
+        setVhNum('');
+    }
+
+    const onSubmitPress = () => {
+
+
+        var formData = {
+            wsUID: user.uid,
+            wsName: cName,
+            wsMobile: cMobile,
+            wsAddress: cAddress,
+            bordPlace: cDate,
+            destPlace: cPlace,
+            vhNum: cType,
+
+            cDesc: cDesc,
+            cRemarks: cRemarks,
+        }
+        uploader(formData);
+        resetForm();
+    }
+
 
     return (
         <View style={styles.container}>
@@ -27,24 +71,24 @@ const SafteyGrid1 = () => {
                         Travel Details </Text>
 
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Name'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                        placeholder='*Name'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Mobile Number'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                        placeholder='*Mobile Number'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Address'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                        placeholder='*Address'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Place of Boarding'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                        placeholder='*Place of Boarding'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
                         placeholder='*Place of Destination'
@@ -57,10 +101,10 @@ const SafteyGrid1 = () => {
                         underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
-                     placeholder = '*Emergency Contact Number'
-                     keyboardType='number-pad'
-                     placeholderTextColor='#ffffff'                     
-                     underlineColorAndroid={'transparent'}
+                        placeholder='*Emergency Contact Number'
+                        keyboardType='number-pad'
+                        placeholderTextColor='#ffffff'
+                        underlineColorAndroid={'transparent'}
                     />
 
                     <TouchableOpacity style={styles.button}>

@@ -1,5 +1,4 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { createStackNavigator, } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
