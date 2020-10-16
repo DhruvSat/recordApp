@@ -7,9 +7,8 @@ import {
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
-    CheckBox
 } from 'react-native';
-
+import CheckBox from '@react-native-community/checkbox';
 
 const WomenSaftey = () => {
     const [isSelected, setSelection] = useState(false);

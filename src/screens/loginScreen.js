@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         width: 300,
         backgroundColor: 'rgba(255,255,255,0.3)',
-        borderRadius: 25,
+        borderRadius: 8,
         paddingHorizontal: 16,
         fontSize: 13,
         color: '#ffffff',
