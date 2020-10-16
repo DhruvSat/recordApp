@@ -41,6 +41,7 @@ const LoginScreen = ({ navigation }) => {
                         placeholderTextColor='#ffffff'
                         onChangeText={(text) => setEmail(text)}
                         value={email}
+                        
                     />
 
                     <TextInput

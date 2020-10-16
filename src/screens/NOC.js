@@ -44,7 +44,9 @@ const NOC = () => {
                     />
                     <TextInput style={styles.inputBox}
                      placeholder = '*Aadhar Card Number'
-                     placeholderTextColor='#ffffff'                     
+                     placeholderTextColor='#ffffff'
+                     maxLength={12}
+                     keyboardType='number-pad'                     
                      underlineColorAndroid={'transparent'}
                     />
                     <View style= {styles.checkboxContainer}>

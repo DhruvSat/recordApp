@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
     Text,
     StyleSheet,
@@ -52,7 +52,6 @@ const SafteyGrid1 = () => {
             bordPlace: cDate,
             destPlace: cPlace,
             vhNum: cType,
-
             cDesc: cDesc,
             cRemarks: cRemarks,
         }

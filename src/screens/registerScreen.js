@@ -68,6 +68,8 @@ const RegisterScreen = ({ navigation }) => {
                         style={styles.inputBox}
                         underlinecolorAndroid='rgba(0,0,0,0)'
                         placeholder='Mobile No.'
+                        maxLength={10}
+                        keyboardType='number-pad'
                         placeholderTextColor='#ffffff'
                         onChangeText={(text) => setPhone(text)}
                         value={phone}
