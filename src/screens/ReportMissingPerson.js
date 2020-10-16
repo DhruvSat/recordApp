@@ -54,12 +54,12 @@ const ReportMissingPerson = () => {
                      underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
-                     placeholder = 'Address of Missing Person'
+                     placeholder = '*Address of Missing Person'
                      placeholderTextColor='#ffffff'                    
                      underlineColorAndroid={'transparent'}
                     />
                     <TextInput style={styles.inputBox}
-                     placeholder = 'Place of Missing'
+                     placeholder = '*Place of Missing'
                      placeholderTextColor='#ffffff'                    
                      underlineColorAndroid={'transparent'}
                     />

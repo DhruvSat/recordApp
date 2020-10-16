@@ -46,7 +46,7 @@ const ViewFirDetail = () => {
                     />
 
                     <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText}> SUBMIT </Text>
+                        <Text style={styles.buttonText}> SEARCH </Text>
                     </TouchableOpacity>
 
                 </KeyboardAvoidingView>

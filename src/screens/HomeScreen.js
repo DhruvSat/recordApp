@@ -1,49 +1,49 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native'
-import Grid from '../components/Grid'
+// import Grid from '../components/Grid'
 import News from '../components/News'
 
 
 export default function HomeScreen({ navigation }) {
     return (
         <View style={styles.container}>
-            <ScrollView >
-
-                <News />
-                <Grid />
-                <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('ProfileScreen') }}>
-                    <Text style={styles.buttonText}> PROFILE </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('NOC') }}>
-                    <Text style={styles.buttonText}> NOC </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('PVC') }}>
-                    <Text style={styles.buttonText}> PVC </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('ReportMissingPerson') }}>
-                    <Text style={styles.buttonText}> MISSING </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('WOMEN SAFTEY') }}>
-                    <Text style={styles.buttonText}> Saftey </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('ReportCrime') }}>
-                    <Text style={styles.buttonText}> CRIME </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('ComplaintRegister') }}>
-                    <Text style={styles.buttonText}> complaint </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('ViewFirDetail') }}>
-                    <Text style={styles.buttonText}> FIR </Text>
-                </TouchableOpacity>
-            </ScrollView>
+        <ScrollView >
+            
+            <News />
+            {/* <Grid /> */}
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('ProfileScreen') }}>
+                <Text style={styles.buttonText}> PROFILE </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('NOC') }}>
+                <Text style={styles.buttonText}> NOC </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('PVC') }}>
+                <Text style={styles.buttonText}> PVC </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('ReportMissingPerson') }}>
+                <Text style={styles.buttonText}> MISSING </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('WOMEN SAFTEY') }}>
+                <Text style={styles.buttonText}> Saftey </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('ReportCrime') }}>
+                <Text style={styles.buttonText}> CRIME </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('ComplaintRegister') }}>
+                <Text style={styles.buttonText}> complaint </Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button}
+                onPress={() => { navigation.navigate('ViewFirDetail') }}>
+                <Text style={styles.buttonText}> FIR </Text>
+            </TouchableOpacity>
+        </ScrollView>
         </View>
     )
 
