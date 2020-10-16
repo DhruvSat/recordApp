@@ -9,7 +9,8 @@ import {
     KeyboardAvoidingView,
     CheckBox
 } from 'react-native';
-
+import { AuthContext } from '../navigation/AuthProvider';
+import firestore from '@react-native-firebase/firestore';
 
 const PVC = () => {
     const [isSelected, setSelection] = useState(false);

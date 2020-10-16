@@ -1,7 +1,7 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import SettingScreen from '../screens/SettingScreen';
-import SchemeScreen from '../screens/SchemeScreen';
+import MyComplaint from '../screens/MyComplaint';
 // import { HomeDrawerContent } from './HomeDrawerContent'
 import HomeTab from './HomeTab';
 
@@ -13,7 +13,7 @@ export default function HomeDrawer() {
         // <Drawer.Navigator drawerContent={props => <HomeDrawerContent {...props} />}>
         <Drawer.Navigator>
             <Drawer.Screen name="Home" component={HomeTab} />
-            <Drawer.Screen name="Schemes" component={SchemeScreen} />
+            <Drawer.Screen name="My Complaints" component={MyComplaint} />
             <Drawer.Screen name="Settings" component={SettingScreen} />
         </Drawer.Navigator>
     )

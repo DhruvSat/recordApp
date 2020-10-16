@@ -8,7 +8,8 @@ import {
     ScrollView,
     KeyboardAvoidingView,
 } from 'react-native';
-
+import { AuthContext } from '../navigation/AuthProvider';
+import firestore from '@react-native-firebase/firestore';
 
 const ReportMissingPerson = () => {    
     return (

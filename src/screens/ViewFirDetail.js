@@ -9,6 +9,8 @@ import {
     KeyboardAvoidingView,
     Image
 } from 'react-native';
+import { AuthContext } from '../navigation/AuthProvider';
+import firestore from '@react-native-firebase/firestore';
 
 
 const ViewFirDetail = () => {    

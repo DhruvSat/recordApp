@@ -9,6 +9,9 @@ import {
     KeyboardAvoidingView,
     CheckBox
 } from 'react-native';
+import { AuthContext } from '../navigation/AuthProvider';
+import firestore from '@react-native-firebase/firestore';
+
 
 
 const NOC = () => {

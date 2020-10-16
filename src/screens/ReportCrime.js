@@ -9,7 +9,8 @@ import {
     KeyboardAvoidingView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import { AuthContext } from '../navigation/AuthProvider';
+import firestore from '@react-native-firebase/firestore';
 
 const ReportCrime = () => {
     
