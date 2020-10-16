@@ -13,7 +13,7 @@ export default function HomeScreen({ navigation }) {
             </View>
                     <View style={{flexDirection:'row',alignSelf: 'center',flex: 1 / 3}}>
                     <TouchableOpacity style={styles.button}
-                    onPress={() => { navigation.navigate('WOMEN SAFTEY1') }}>
+                    onPress={() => { navigation.navigate('TRAVEL SAFTEY') }}>
                         <Image style={styles.image}
                        source= {{uri:'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FWomen%20Safety.png?alt=media&token=d5c92e4d-8de6-4b46-8f69-3b3fd817b3fc'}}
                        />

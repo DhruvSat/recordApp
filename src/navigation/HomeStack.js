@@ -1,10 +1,10 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { createStackNavigator, } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import SafteyGrid1 from '../screens/SafteyGrid1';
 import SafteyGrid2 from '../screens/SafteyGrid2';
+import SafteyGrid3 from '../screens/SafteyGrid3';
 import ComplaintRegister from '../screens/ComplaintRegister';
 import ReportCrime from '../screens/ReportCrime';
 import ViewFirDetail from '../screens/ViewFirDetail';
@@ -12,9 +12,8 @@ import SuccessPage from '../components/SuccessPage';
 import ReportMissingPerson from '../screens/ReportMissingPerson';
 import NOC from '../screens/NOC';
 import PVC from '../screens/PVC';
-import SafteyGrid3 from '../screens/SafteyGrid3';
-import Grid from "../components/Grid";
 import Icon from 'react-native-vector-icons/Ionicons';
+import Icon2 from 'react-native-vector-icons/Entypo';
 
 
 const Stack = createStackNavigator();
@@ -26,7 +25,12 @@ export default function HomeStack({ navigation }) {
       <Stack.Screen name='HomeScreen' component={HomeScreen}
         options={{
           headerLeft: () => (
-            <Icon name="ios-menu" size={25} onPress={() => navigation.openDrawer()}></Icon>
+            <Icon name="ios-menu" size={32} style={{marginLeft:12,color:'#fff'}}
+             onPress={() => navigation.openDrawer()}></Icon>
+          ),
+          headerRight: () => (
+            <Icon2 name="dots-three-vertical" size={22} style={{marginRight:8,color:'#fff'}}
+             onPress={() => navigation.openDrawer()}></Icon2>
           ),
           title: 'Gujarat Citizen',
           headerStyle: {
@@ -51,9 +55,9 @@ export default function HomeStack({ navigation }) {
           headerTitleAlign: 'center',
           headerTintColor: 'white'
         }} />
-      <Stack.Screen name='WOMEN SAFTEY1' component={SafteyGrid1}
+      <Stack.Screen name='TRAVEL SAFTEY' component={SafteyGrid1}
         options={{
-          title: 'WOMEN SAFTEY1',
+          title: 'TRAVEL SAFTEY',
           headerStyle: {
             backgroundColor: '#0f3460',
           },

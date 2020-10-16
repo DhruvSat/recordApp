@@ -13,7 +13,6 @@ import firestore from '@react-native-firebase/firestore';
 import CheckBox from '@react-native-community/checkbox';
 
 const SafteyGrid1 = () => {
-    const [isSelected, setSelection] = useState(false);
 
     return (
         <View style={styles.container}>
@@ -23,7 +22,7 @@ const SafteyGrid1 = () => {
                     <Text style={styles.text}>Feel Safe. Travel Safe with Gujarat Police</Text>
 
 
-                    <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#fff', alignSelf: 'center' }}>
+                    <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#fff',marginTop:-15, alignSelf: 'center' }}>
                         Travel Details </Text>
 
                     <TextInput style={styles.inputBox}
@@ -84,7 +83,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         paddingTop: 15,
         paddingBottom: 50,
-        fontSize: 18
+        fontSize: 15
     },
     SMStext: {
         color: '#ffffff',

@@ -41,7 +41,7 @@ const ProfileScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flexGrow:1,
-        backgroundColor: '#1a1a2e',
+        backgroundColor: '#fff',
     },
     button: {
         backgroundColor: '#e94560',
