@@ -7,9 +7,7 @@ import {
     TouchableOpacity,
     ScrollView,
     KeyboardAvoidingView,
-    CheckBox
 } from 'react-native';
-
 
 const ComplaintRegister = () => {
     

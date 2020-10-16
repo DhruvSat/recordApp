@@ -10,6 +10,7 @@ import ViewFirDetail from '../screens/ViewFirDetail';
 import ReportMissingPerson from '../screens/ReportMissingPerson';
 import NOC from '../screens/NOC';
 import PVC from '../screens/PVC';
+import Grid from "../components/Grid";
 
 const Stack = createStackNavigator();
 
@@ -30,6 +31,8 @@ export default function HomeStack() {
                 
               }} 
             />
+             <Stack.Screen name='Grid' component={Grid}/>
+           
             <Stack.Screen name='ProfileScreen' component={ProfileScreen}
             options={{
                 title: 'PROFILE',
