@@ -70,7 +70,7 @@ export default function HomeScreen({ navigation }) {
                     <TouchableOpacity style={styles.button}
                     onPress={() => { navigation.navigate('ContactDetails') }}>
                         <Image style={styles.image}
-                       source= {{uri:'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FFIR%20list.png?alt=media&token=bf53d18b-8b06-4ea1-9998-3f339c973434'}}
+                       source= {{uri:'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2Fhelpline.png?alt=media&token=dc88619b-c926-42c3-8a85-33df628aa339'}}
                        />
                     </TouchableOpacity>
                     

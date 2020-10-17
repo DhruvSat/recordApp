@@ -142,7 +142,7 @@ export default function HomeStack({ navigation }) {
         }} />
       <Stack.Screen name='ContactDetails' component={ContactDetails}
         options={{
-          title: 'HELPLINE NUMBERS',
+          title: 'HELPLINES',
           headerStyle: {
             backgroundColor: '#0f3460',
           },
