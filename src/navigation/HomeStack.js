@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { createStackNavigator, } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
@@ -14,25 +14,48 @@ import NOC from '../screens/NOC';
 import PVC from '../screens/PVC';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/Entypo';
+import { AuthContext } from '../navigation/AuthProvider';
+import firestore from '@react-native-firebase/firestore';
 
 
 const Stack = createStackNavigator();
 
 export default function HomeStack({ navigation }) {
+  const { user } = useContext(AuthContext);
+  const [isPolice, setIsPolice] = useState(false)
+  var hsTitle = 'Gujarat Citizen'
+  // fetching user data by user id
+  firestore()
+    .collection('users')
+    .doc(user.uid)
+    .get()
+    .then(documentSnapshot => {
+      if (documentSnapshot.exists) {
+        setIsPolice(documentSnapshot.data().isPolice)
+      }
+    });
+
+  if (isPolice) hsTitle = 'Gujarat Police'
+
+
+
+
+
   return (
 
     <Stack.Navigator>
       <Stack.Screen name='HomeScreen' component={HomeScreen}
         options={{
           headerLeft: () => (
-            <Icon name="ios-menu" size={32} style={{marginLeft:12,color:'#fff'}}
-             onPress={() => navigation.openDrawer()}></Icon>
+            <Icon name="ios-menu" size={32} style={{ marginLeft: 12, color: '#fff' }}
+              onPress={() => navigation.openDrawer()}></Icon>
           ),
           headerRight: () => (
-            <Icon2 name="dots-three-vertical" size={22} style={{marginRight:8,color:'#fff'}}
-             onPress={() => navigation.openDrawer()}></Icon2>
+            <Icon2 name="dots-three-vertical" size={22} style={{ marginRight: 8, color: '#fff' }}
+              onPress={() => navigation.openDrawer()}></Icon2>
           ),
-          title: 'Gujarat Citizen',
+
+          title: `${hsTitle}`,
           headerStyle: {
             backgroundColor: '#0f3460',
 

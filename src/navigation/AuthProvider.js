@@ -28,7 +28,8 @@ export const AuthProvider = ({ children }) => {
                                 id: uid,
                                 email,
                                 fullName,
-                                phone
+                                phone,
+                                'isPolice': false
                             };
 
                             const usersRefs = firestore().collection('users')
@@ -45,6 +46,7 @@ export const AuthProvider = ({ children }) => {
                         console.log(e);
                     }
                 },
+                
                 logout: async () => {
                     try {
                         await auth().signOut();

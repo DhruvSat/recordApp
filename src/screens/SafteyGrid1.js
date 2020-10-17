@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
     Text,
     StyleSheet,
@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { AuthContext } from '../navigation/AuthProvider';
 import firestore from '@react-native-firebase/firestore';
-
+import DropDownPicker from 'react-native-dropdown-picker';
 const SafteyGrid1 = () => {
 
     const { user } = useContext(AuthContext);
@@ -69,7 +69,7 @@ const SafteyGrid1 = () => {
                     <Text style={styles.text}>Feel Safe. Travel Safe with Gujarat Police</Text>
 
 
-                    <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#fff',marginTop:-15, alignSelf: 'center' }}>
+                    <Text style={{ fontSize: 25, fontWeight: 'bold', color: '#fff', marginTop: -15, alignSelf: 'center' }}>
                         Travel Details </Text>
 
                     <TextInput style={styles.inputBox}
@@ -100,12 +100,29 @@ const SafteyGrid1 = () => {
                         onChangeText={(text) => setBordPlace(text)}
                         value={bordPlace}
                     />
+
                     <TextInput style={styles.inputBox}
                         placeholder='*Place of Destination'
                         placeholderTextColor='#ffffff'
                         underlineColorAndroid={'transparent'}
                         onChangeText={(text) => setDestPlace(text)}
                         value={destPlace}
+                    />
+                    <DropDownPicker
+                        items={[
+                            { label: 'UK', value: 'uk', icon: () => <Icon name="flag" size={18} color="#900" /> },
+                            { label: 'France', value: 'france', icon: () => <Icon name="flag" size={18} color="#900" /> },
+                        ]}
+                        // defaultValue={this.state.country}
+                        containerStyle={{ height: 40 }}
+                        style={{ backgroundColor: '#fafafa' }}
+                        itemStyle={{
+                            justifyContent: 'flex-start'
+                        }}
+                        dropDownStyle={{ backgroundColor: '#fafafa' }}
+                        onChangeItem={item => this.setState({
+                            country: item.value
+                        })}
                     />
                     <TextInput style={styles.inputBox}
                         placeholder='*Vehical Number (ex. GJ05AA0000)'

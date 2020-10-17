@@ -4,15 +4,17 @@ import firestore from '@react-native-firebase/firestore'
 import { AuthContext } from '../navigation/AuthProvider';
 
 
-const ProfileScreen = ({ navigation }) => {
+const ProfileScreen = () => {
 
     const { user, logout } = useContext(AuthContext);
 
     const [userEmail, setUserEmail] = useState('')
     const [userName, setUserName] = useState('')
     const [userPhone, setUserPhone] = useState('')
+    const [isPolice, setIsPolice] = useState(false)
+    var userType = ''
 
-    //fetching user data by user id
+    // fetching user data by user id
     firestore()
         .collection('users')
         .doc(user.uid)
@@ -22,14 +24,17 @@ const ProfileScreen = ({ navigation }) => {
                 setUserName(documentSnapshot.data().fullName)
                 setUserEmail(documentSnapshot.data().email)
                 setUserPhone(documentSnapshot.data().phone)
+                setIsPolice(documentSnapshot.data().isPolice)
             }
         });
+    isPolice ? userType = 'Police' : userType = 'Citizen'
 
     return (
         <View style={styles.container}>
-            <Text >Email:{userEmail}</Text>
-            <Text>Name:{userName}</Text>
-            <Text>Phone:{userPhone}</Text>
+            <Text style={{ fontSize: 30 }}>Email:{userEmail}</Text>
+            <Text style={{ fontSize: 30 }}>Name:{userName}</Text>
+            <Text style={{ fontSize: 30 }}>Phone:{userPhone}</Text>
+            <Text style={{ fontSize: 30 }}>User Type:{userType}</Text>
 
             <TouchableOpacity style={styles.button}
                 onPress={() => logout()}>
@@ -40,7 +45,7 @@ const ProfileScreen = ({ navigation }) => {
 }
 const styles = StyleSheet.create({
     container: {
-        flexGrow:1,
+        flexGrow: 1,
         backgroundColor: '#fff',
     },
     button: {
@@ -57,12 +62,28 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
     },
     buttonText: {
-        fontSize:15,
-        fontWeight:'500',
-        color:'#ffffff',
-        textAlign:'center'
+        fontSize: 15,
+        fontWeight: '500',
+        color: '#ffffff',
+        textAlign: 'center'
     },
 })
 
 
 export default ProfileScreen
+
+
+//code for realtimedata
+// const [userData, setUserData] = useState({
+//     user: {
+//         name: ''
+//     }
+// })
+
+// subscriber = firestore().collection('users').doc(user.uid).onSnapshot(doc => {
+//     setUserData(({
+//         user: {
+//             name: doc.data().fullName
+//         }
+//     }))
+// })
