@@ -1,8 +1,10 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native'
 import News from '../../components/News'
+import { useNavigation } from '@react-navigation/native';
 
-export default function HomeCitizen({ navigation }) {
+export default function HomeCitizen() {
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <ScrollView >

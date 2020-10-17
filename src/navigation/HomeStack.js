@@ -2,7 +2,8 @@ import React, { useContext, useState } from 'react';
 import { createStackNavigator, } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import HomeCitizen from '../screens/citizen/HomeCitizen';
-import HomePolice from '../screens/citizen/HomePolice';
+import HomePolice from '../screens/police/HomePolice';
+import PoliceWomenSafety from '../screens/police/PoliceWomenSafety';
 import ProfileScreen from '../screens/ProfileScreen';
 import SafteyGrid1 from '../screens/SafteyGrid1';
 import SafteyGrid2 from '../screens/SafteyGrid2';
@@ -17,9 +18,10 @@ import NOC from '../screens/NOC';
 import PVC from '../screens/PVC';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/Entypo';
-import { AuthContext } from '../navigation/AuthProvider';
+import { AuthContext } from './AuthProvider';
 import firestore from '@react-native-firebase/firestore';
-
+import { AuthProvider } from './AuthProvider';
+// import { useNavigation } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 
@@ -69,6 +71,7 @@ export default function HomeStack({ navigation }) {
           headerTitleAlign: 'center',
         }}
       />
+      <Stack.Screen name='AuthProvider' component={AuthProvider} />
       <Stack.Screen name='ProfileScreen' component={ProfileScreen}
         options={{
           title: 'PROFILE',
@@ -81,18 +84,37 @@ export default function HomeStack({ navigation }) {
           headerTitleAlign: 'center',
           headerTintColor: 'white'
         }} />
-      <Stack.Screen name='TRAVEL SAFTEY' component={SafteyGrid1}
-        options={{
-          title: 'TRAVEL SAFTEY',
-          headerStyle: {
-            backgroundColor: '#0f3460',
-          },
-          headerTitleStyle: {
-            color: '#ffffff'
-          },
-          headerTitleAlign: 'center',
-          headerTintColor: 'white'
-        }} />
+      {isPolice ?
+        (
+          <Stack.Screen name='WOMEN SAFETY' component={PoliceWomenSafety}
+            options={{
+              title: 'POLICE WOMEN SAFETY',
+              headerStyle: {
+                backgroundColor: '#0f3460',
+              },
+              headerTitleStyle: {
+                color: '#ffffff'
+              },
+              headerTitleAlign: 'center',
+              headerTintColor: 'white'
+            }} />
+        )
+        :
+        (
+          <Stack.Screen name='TRAVEL SAFTEY' component={SafteyGrid1}
+            options={{
+              title: 'TRAVEL SAFTEY',
+              headerStyle: {
+                backgroundColor: '#0f3460',
+              },
+              headerTitleStyle: {
+                color: '#ffffff'
+              },
+              headerTitleAlign: 'center',
+              headerTintColor: 'white'
+            }} />
+        )}
+
       <Stack.Screen name='WOMEN SAFTEY2' component={SafteyGrid2}
         options={{
           title: 'WOMEN SAFTEY2',

@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 
 import { View, Text, StyleSheet, ScrollView } from 'react-native'
-import { AuthContext } from '../navigation/AuthProvider';
+import { AuthContext } from '../../navigation/AuthProvider';
 import firestore from '@react-native-firebase/firestore';
 import { Card } from 'react-native-elements';
 
