@@ -11,6 +11,7 @@ import ReportCrime from '../screens/ReportCrime';
 import ViewFirDetail from '../screens/ViewFirDetail';
 import ContactDetails from '../screens/ContactDetails';
 import SuccessPage from '../components/SuccessPage';
+import FileFIR from '../screens/police/FileFIR';
 import ReportMissingPerson from '../screens/ReportMissingPerson';
 import SearchMissingPerson from '../screens/police/SearchMissingPerson';
 import NOC from '../screens/NOC';
@@ -177,6 +178,18 @@ export default function HomeStack({ navigation }) {
       <Stack.Screen name='ViewFirDetail' component={ViewFirDetail}
         options={{
           title: 'View FIR Detail',
+          headerStyle: {
+            backgroundColor: '#0f3460',
+          },
+          headerTitleStyle: {
+            color: '#ffffff'
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: 'white'
+        }} />
+      <Stack.Screen name='FileFIR' component={FileFIR}
+        options={{
+          title: 'REPORT FIR',
           headerStyle: {
             backgroundColor: '#0f3460',
           },

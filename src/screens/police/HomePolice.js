@@ -55,9 +55,9 @@ export default function HomePolice() {
 
                 <View style={{ flexDirection: 'row', alignSelf: 'flex-start', flex: 1 / 3 }}>
                     <TouchableOpacity style={styles.button}
-                        onPress={() => { navigation.navigate('ViewFirDetail') }}>
+                        onPress={() => { navigation.navigate('FileFIR') }}>
                         <Image style={styles.image}
-                            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FFIR%20list.png?alt=media&token=bf53d18b-8b06-4ea1-9998-3f339c973434' }}
+                            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FRegister%20FIR.png?alt=media&token=84b4b304-cc02-4ec6-b797-66c67295080d' }}
                         />
                     </TouchableOpacity>
                 </View>
