@@ -1,11 +1,13 @@
 import React, { createContext, useState } from 'react';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+// import HomeScreen from '../screens/HomeScreen';
 
-
+// import { useNavigation } from '@react-navigation/native';
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
+    // const navigation = useNavigation();
     const [user, setUser] = useState(null);
 
     return (
@@ -16,6 +18,7 @@ export const AuthProvider = ({ children }) => {
                 login: async (email, password) => {
                     try {
                         await auth().signInWithEmailAndPassword(email, password);
+                        // navigation.navigate('HomeScreen')
                     } catch (e) {
                         console.log(e);
                     }
@@ -28,7 +31,8 @@ export const AuthProvider = ({ children }) => {
                                 id: uid,
                                 email,
                                 fullName,
-                                phone
+                                phone,
+                                'isPolice': false
                             };
 
                             const usersRefs = firestore().collection('users')
@@ -41,10 +45,12 @@ export const AuthProvider = ({ children }) => {
                         }).catch((error) => {
                             alert(error)
                         });;
+                        // navigation.navigate('HomeScreen')
                     } catch (e) {
                         console.log(e);
                     }
                 },
+
                 logout: async () => {
                     try {
                         await auth().signOut();

@@ -4,18 +4,22 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import HomeStack from './HomeStack';
 import ProfileScreen from '../screens/ProfileScreen';
 import SettingScreen from '../screens/SettingScreen';
+import NotificationPol from '../screens/police/Notifications';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { withBadge } from 'react-native-elements'
 // import Icon from 'react-native-vector-icons/FontAwesome';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
 
 const Tab = createMaterialBottomTabNavigator();
 export default function HomeTab() {
-    return (
-        <Tab.Navigator
-        initialRouteName="Home"
-        activeColor="#fff"
-        >
+  const BadgedIcon = withBadge('')(Icon)
+
+  return (
+    <Tab.Navigator
+      initialRouteName="Home"
+      activeColor="#fff"
+    >
       <Tab.Screen
         name="Home"
         component={HomeStack}
@@ -29,12 +33,13 @@ export default function HomeTab() {
       />
       <Tab.Screen
         name="Notifications"
-        component={HomeStack}
+        component={NotificationPol}
         options={{
           tabBarLabel: '',
           tabBarColor: '#0f3460',
           tabBarIcon: ({ color }) => (
-            <Icon name="ios-notifications" color={color} size={26} />
+            // <Icon name="ios-notifications" color={color} size={26} />
+            < BadgedIcon type="ionicon" name="ios-notifications" color={color} size={26} />
           ),
         }}
       />
@@ -61,5 +66,5 @@ export default function HomeTab() {
         }}
       />
     </Tab.Navigator>
-);
+  );
 }
