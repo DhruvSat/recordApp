@@ -12,7 +12,7 @@ const ProfileScreen = () => {
     const [userName, setUserName] = useState('')
     const [userPhone, setUserPhone] = useState('')
     const [isPolice, setIsPolice] = useState(false)
-    const [psLoc, setPsLoc] = useState(false)
+    const [psLoc, setPsLoc] = useState('')
     var userType = ''
 
     // fetching user data by user id

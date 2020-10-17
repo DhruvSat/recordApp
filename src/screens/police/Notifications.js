@@ -1,38 +1,55 @@
-import React, { useContext, useState } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Card } from 'react-native-elements';
-import { AuthContext } from '../../navigation/AuthProvider'
+import React, { useContext, useState, useEffect } from 'react';
+
+import { View, Text, StyleSheet, ScrollView } from 'react-native'
 import firestore from '@react-native-firebase/firestore';
+import { Card } from 'react-native-elements';
+// import Loading from '../../components/Loading'
 
-const NotificationPol = () => {
-    const { user } = useContext(AuthContext);
-    var womensafety = [];
-    firestore().collection("womensafety").where("cUID", "==", user.uid)
-        .get()
-        .then(function (querySnapshot) {
 
-            querySnapshot.forEach(function (doc) {
-                complaintsLocal.push(doc.data());
-                window.temp = womensafety.slice()
+const Notifications = () => {
+
+    const [loading, setLoading] = useState(true);
+    const [womenData, setData] = useState([]);
+
+    console.log(JSON.stringify(station))
+    var ref = firestore().collection('notifications')
+
+    useEffect(() => {
+
+        return ref.onSnapshot(querySnapshot => {
+            const list = [];
+            querySnapshot.forEach(doc => {
+                const { wsName, boardPlace, wsMobile } = doc.data();
+                list.push({
+                    id: doc.id,
+                    wsName,
+                    boardPlace,
+                    wsMobile
+                });
+                console.log(list)
             });
-        })
-        .catch(function (error) {
-            console.log("Error getting documents: ", error);
+
+            setData(list);
+
+            if (loading) {
+                setLoading(false);
+            }
         });
+    }, []);
+
+
     return (
         <ScrollView style={styles.scrview}>
             <View style={styles.container}>
-                {window.temp.map((data) => {
+                {womenData.map((data) => {
                     return (
-                        <Card title={data.cType}>
-                            <Text>Complaintant Name : {data.cName}</Text>
-                            <Text>Complaintant Mobile Number : {data.cMobile}</Text>
-                            <Text>Date : {data.cDate}</Text>
-                            <Text>Place of Occurence : {data.cPlace}</Text>
-                            <Text>Type of Complaint : {data.cType}</Text>
-                            <Text>Complaintant Address : {data.cAddress}</Text>
-                            <Text>Complaint Description : {data.cDesc}</Text>
-                            <Text>Remarks : {data.cRemarks}</Text>
+                        <Card title={data.wsName}>
+                            <Text>Women Name : {data.wsName}</Text>
+                            <Text>Mobile No : {data.wsMobile}</Text>
+                            {/* <Text>Address : {data.wsAddress}</Text> */}
+                            <Text>Boarding : {data.boardPlace}</Text>
+                            {/* <Text>Destination : {data.destPlace}</Text>
+                            <Text>Vechile No : {data.vhNum}</Text> */}
                         </Card>
                     )
                 })}
@@ -61,4 +78,4 @@ const styles = StyleSheet.create({
         color: '#34495e',
     },
 });
-export default NotificationPol
+export default Notifications
