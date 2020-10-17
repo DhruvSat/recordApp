@@ -67,6 +67,12 @@ export default function HomeScreen({ navigation }) {
                        source= {{uri:'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FFIR%20list.png?alt=media&token=bf53d18b-8b06-4ea1-9998-3f339c973434'}}
                        />
                     </TouchableOpacity>
+                    <TouchableOpacity style={styles.button}
+                    onPress={() => { navigation.navigate('ContactDetails') }}>
+                        <Image style={styles.image}
+                       source= {{uri:'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FFIR%20list.png?alt=media&token=bf53d18b-8b06-4ea1-9998-3f339c973434'}}
+                       />
+                    </TouchableOpacity>
                     
                     
                 </View>
