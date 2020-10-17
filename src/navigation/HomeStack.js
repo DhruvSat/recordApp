@@ -1,8 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { createStackNavigator, } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
-import HomeCitizen from '../screens/citizen/HomeCitizen';
-import HomePolice from '../screens/police/HomePolice';
 import PoliceWomenSafety from '../screens/police/PoliceWomenSafety';
 import ProfileScreen from '../screens/ProfileScreen';
 import SafteyGrid1 from '../screens/SafteyGrid1';
@@ -14,6 +12,7 @@ import ViewFirDetail from '../screens/ViewFirDetail';
 import ContactDetails from '../screens/ContactDetails';
 import SuccessPage from '../components/SuccessPage';
 import ReportMissingPerson from '../screens/ReportMissingPerson';
+import SearchMissingPerson from '../screens/police/SearchMissingPerson';
 import NOC from '../screens/NOC';
 import PVC from '../screens/PVC';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -200,6 +199,18 @@ export default function HomeStack({ navigation }) {
           headerTintColor: 'white'
         }} />
       <Stack.Screen name='ReportMissingPerson' component={ReportMissingPerson}
+        options={{
+          title: 'Report Missing Person',
+          headerStyle: {
+            backgroundColor: '#0f3460',
+          },
+          headerTitleStyle: {
+            color: '#ffffff'
+          },
+          headerTitleAlign: 'center',
+          headerTintColor: 'white'
+        }} />
+      <Stack.Screen name='SearchMissingPerson' component={SearchMissingPerson}
         options={{
           title: 'Report Missing Person',
           headerStyle: {

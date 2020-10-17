@@ -12,7 +12,7 @@ export default function HomePolice() {
                 <View style={styles.formHeader}>
                     <Text style={{ fontSize: 15, marginLeft: 12, marginTop: 5, color: '#fff', fontWeight: 'bold' }}>WOMEN SAFTEY</Text>
                 </View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center', flex: 1 / 3 }}>
+                <View style={{ flexDirection: 'row', alignSelf: 'flex-start', flex: 1 / 3 }}>
                     <TouchableOpacity style={styles.button}
                         onPress={() => { navigation.navigate('WOMEN SAFETY') }}>
                         <Image style={styles.image}
@@ -25,11 +25,11 @@ export default function HomePolice() {
                 <View style={styles.formHeader}>
                     <Text style={{ fontSize: 15, marginLeft: 12, marginTop: 5, color: '#fff', fontWeight: 'bold' }}>PUBLIC SERVICES</Text>
                 </View>
-                <View style={{ flexDirection: 'row', alignSelf: 'center', flex: 1 / 3 }}>
+                <View style={{ flexDirection: 'row', alignSelf: 'flex-start', flex: 1 / 3 }}>
                     <TouchableOpacity style={styles.button}
-                        onPress={() => { navigation.navigate('ReportMissingPerson') }}>
+                        onPress={() => { navigation.navigate('SearchMissingPerson') }}>
                         <Image style={styles.image}
-                            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FReport%20missing%20person.png?alt=media&token=9600e84c-051b-4ee4-a1e2-33a8ba814e9a' }}
+                            source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FSearch%20missing%20person.png?alt=media&token=81d5fbd3-540c-439f-aa1e-be1e2df56824' }}
                         />
                     </TouchableOpacity>
                 </View>

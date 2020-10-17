@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { AuthContext } from '../navigation/AuthProvider';
 import firestore from '@react-native-firebase/firestore';
-import DropDownPicker from 'react-native-dropdown-picker';
+// import DropDownPicker from 'react-native-dropdown-picker';
 const SafteyGrid1 = () => {
 
     const { user } = useContext(AuthContext);
