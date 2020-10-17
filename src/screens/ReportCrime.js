@@ -70,6 +70,7 @@ const ReportCrime = () => {
                         placeholder='*Mobile Number'
                         placeholderTextColor='#ffffff'
                         keyboardType='number-pad'
+                        maxLength={10}
                         underlineColorAndroid={'transparent'}
                     />
                     <TextInput

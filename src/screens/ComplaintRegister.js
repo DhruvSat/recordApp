@@ -78,6 +78,7 @@ const ComplaintRegister = ({ navigation }) => {
                         placeholder='*Complaintant Mobile Number'
                         placeholderTextColor='#ffffff'
                         keyboardType='number-pad'
+                        maxLength={10}
                         underlineColorAndroid={'transparent'}
                         onChangeText={(text) => setCMobile(text)}
                         value={cMobile}

@@ -52,7 +52,6 @@ const SafteyGrid1 = () => {
             bordPlace: cDate,
             destPlace: cPlace,
             vhNum: cType,
-
             cDesc: cDesc,
             cRemarks: cRemarks,
         }

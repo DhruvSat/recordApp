@@ -56,6 +56,7 @@ const PVC = () => {
                         placeholder='*Aadhar Card Number'
                         placeholderTextColor='#ffffff'
                         keyboardType='number-pad'
+                        maxLength={12}
                         underlineColorAndroid={'transparent'}
                     />
                     <View style={styles.checkboxContainer}>

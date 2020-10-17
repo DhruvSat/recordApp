@@ -52,7 +52,6 @@ const ViewFirDetail = () => {
                     <TextInput
                         style={styles.inputBox}
                         placeholder='*Select Police Station'
-                        keyboardType='number-pad'
                         placeholderTextColor='#ffffff'
                         underlineColorAndroid={'transparent'}
                     />
