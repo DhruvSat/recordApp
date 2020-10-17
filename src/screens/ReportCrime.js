@@ -47,18 +47,6 @@ const ReportCrime = () => {
                         underlineColorAndroid={'transparent'}
 
                     />
-                    <View style={{ flexDirection: 'row' }}>
-                        <TouchableOpacity>
-                            <Text style={styles.imageBtn}>
-                                <Icon name="camera" size={30} color="#ffffff" />
-                            </Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Text style={styles.imageBtn}>
-                                <Icon name="video-camera" size={30} color="#ffffff" />
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
                     <TextInput
                         style={styles.inputBox}
                         placeholder='*Remark'
