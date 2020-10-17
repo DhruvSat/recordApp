@@ -19,12 +19,11 @@ const Notifications = () => {
         return ref.onSnapshot(querySnapshot => {
             const list = [];
             querySnapshot.forEach(doc => {
-                const { wsName, boardPlace, wsMobile } = doc.data();
+                const { wsNotification } = doc.data();
                 list.push({
                     id: doc.id,
-                    wsName,
-                    boardPlace,
-                    wsMobile
+                    wsNotification,
+
                 });
                 console.log(list)
             });
@@ -44,7 +43,7 @@ const Notifications = () => {
                 {womenData.map((data) => {
                     return (
                         <Card title={data.wsName}>
-                            <Text>Women Name : {data.wsName}</Text>
+                            <Text>Notifications : {data.wsName}</Text>
                             <Text>Mobile No : {data.wsMobile}</Text>
                             {/* <Text>Address : {data.wsAddress}</Text> */}
                             <Text>Boarding : {data.boardPlace}</Text>

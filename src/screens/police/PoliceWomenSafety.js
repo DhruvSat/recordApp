@@ -42,19 +42,6 @@ const PoliceWomenSafety = ({ route }) => {
         });
     }, []);
 
-    // firestore().collection("womensafety").where("boardPlace", "==", psLoc)
-    //     .get()
-    //     .then(function (querySnapshot) {
-
-    //         querySnapshot.forEach(function (doc) {
-    //             console.log(doc.data())
-    //             setData([...womenData],)
-    //             console.log(womenData)
-    //         });
-    //     })
-    //     .catch(function (error) {
-    //         console.log("Error getting documents: ", error);
-    //     });
     return (
         <ScrollView style={styles.scrview}>
             <View style={styles.container}>

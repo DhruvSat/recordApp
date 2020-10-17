@@ -1,11 +1,11 @@
-import React,{useContext, useState} from 'react'
+import React, { useContext, useState } from 'react'
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, Image } from 'react-native'
 import News from '../../components/News'
 import { useNavigation } from '@react-navigation/native';
 import firestore from '@react-native-firebase/firestore'
 import { AuthContext } from '../../navigation/AuthProvider';
 export default function HomePolice() {
-    
+
     const { user } = useContext(AuthContext);
 
     const navigation = useNavigation();
@@ -13,15 +13,14 @@ export default function HomePolice() {
     const [station, setStation] = useState('')
 
     firestore()
-    .collection('users')
-    .doc(user.uid)
-    .get()
-    .then(documentSnapshot => {
-        if (documentSnapshot.exists) {
-            setStation(documentSnapshot.data().psLoc)
-            
-        }
-    });
+        .collection('users')
+        .doc(user.uid)
+        .get()
+        .then(documentSnapshot => {
+            if (documentSnapshot.exists) {
+                setStation(documentSnapshot.data().psLoc)
+            }
+        });
 
     return (
         <View style={styles.container}>
@@ -33,7 +32,7 @@ export default function HomePolice() {
                 </View>
                 <View style={{ flexDirection: 'row', alignSelf: 'flex-start', flex: 1 / 3 }}>
                     <TouchableOpacity style={styles.button}
-                        onPress={() => { navigation.navigate('WOMEN SAFETY',{station:station}) }}>
+                        onPress={() => { navigation.navigate('WOMEN SAFETY', { station: station }) }}>
                         <Image style={styles.image}
                             source={{ uri: 'https://firebasestorage.googleapis.com/v0/b/crime-record-app.appspot.com/o/gridicons%2FWomen%20Safety.png?alt=media&token=d5c92e4d-8de6-4b46-8f69-3b3fd817b3fc' }}
                         />
