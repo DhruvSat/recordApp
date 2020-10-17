@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { createStackNavigator, } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
+import HomeCitizen from '../screens/citizen/HomeCitizen';
+import HomePolice from '../screens/citizen/HomePolice';
 import ProfileScreen from '../screens/ProfileScreen';
 import SafteyGrid1 from '../screens/SafteyGrid1';
 import SafteyGrid2 from '../screens/SafteyGrid2';

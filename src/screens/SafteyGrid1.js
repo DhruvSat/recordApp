@@ -107,22 +107,7 @@ const SafteyGrid1 = () => {
                         onChangeText={(text) => setDestPlace(text)}
                         value={destPlace}
                     />
-                    <DropDownPicker
-                        items={[
-                            { label: 'UK', value: 'uk', icon: () => <Icon name="flag" size={18} color="#900" /> },
-                            { label: 'France', value: 'france', icon: () => <Icon name="flag" size={18} color="#900" /> },
-                        ]}
-                        // defaultValue={this.state.country}
-                        containerStyle={{ height: 40 }}
-                        style={{ backgroundColor: '#fafafa' }}
-                        itemStyle={{
-                            justifyContent: 'flex-start'
-                        }}
-                        dropDownStyle={{ backgroundColor: '#fafafa' }}
-                        onChangeItem={item => this.setState({
-                            country: item.value
-                        })}
-                    />
+
                     <TextInput style={styles.inputBox}
                         placeholder='*Vehical Number (ex. GJ05AA0000)'
                         placeholderTextColor='#ffffff'

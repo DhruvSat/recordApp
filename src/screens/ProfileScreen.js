@@ -12,6 +12,7 @@ const ProfileScreen = () => {
     const [userName, setUserName] = useState('')
     const [userPhone, setUserPhone] = useState('')
     const [isPolice, setIsPolice] = useState(false)
+    const [psLoc, setPsLoc] = useState(false)
     var userType = ''
 
     // fetching user data by user id
@@ -24,6 +25,7 @@ const ProfileScreen = () => {
                 setUserName(documentSnapshot.data().fullName)
                 setUserEmail(documentSnapshot.data().email)
                 setUserPhone(documentSnapshot.data().phone)
+                setPsLoc(documentSnapshot.data().psLoc)
                 setIsPolice(documentSnapshot.data().isPolice)
             }
         });
@@ -35,6 +37,7 @@ const ProfileScreen = () => {
             <Text style={{ fontSize: 30 }}>Name:{userName}</Text>
             <Text style={{ fontSize: 30 }}>Phone:{userPhone}</Text>
             <Text style={{ fontSize: 30 }}>User Type:{userType}</Text>
+            {isPolice ? (<Text style={{ fontSize: 30 }}>Police Station:{psLoc}</Text>) : (null)}
 
             <TouchableOpacity style={styles.button}
                 onPress={() => logout()}>

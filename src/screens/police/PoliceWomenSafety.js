@@ -5,7 +5,7 @@ import { AuthContext } from '../navigation/AuthProvider';
 import firestore from '@react-native-firebase/firestore';
 import { Card } from 'react-native-elements';
 
-const Meetings = () => {
+const MyComplaint = () => {
     const { user } = useContext(AuthContext);
     var complaintsLocal = [];
     firestore().collection("complaints").where("cUID", "==", user.uid)
@@ -25,7 +25,7 @@ const Meetings = () => {
                 {window.temp.map((data) => {
                     return (
                         <Card title={data.cType}>
-                            <Text>Complaintant Name : {data.cName}</Text>
+                            <Text>Women Name : {data.cName}</Text>
                             <Text>Complaintant Mobile Number : {data.cMobile}</Text>
                             <Text>Date : {data.cDate}</Text>
                             <Text>Place of Occurence : {data.cPlace}</Text>
@@ -61,4 +61,4 @@ const styles = StyleSheet.create({
         color: '#34495e',
     },
 });
-export default Meetings
+export default MyComplaint

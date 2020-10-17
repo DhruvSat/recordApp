@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Card } from 'react-native-elements';
+import { AuthContext } from '../../navigation/AuthProvider'
+import firestore from '@react-native-firebase/firestore';
 
 const NotificationPol = () => {
     const { user } = useContext(AuthContext);
@@ -10,9 +12,7 @@ const NotificationPol = () => {
         .then(function (querySnapshot) {
 
             querySnapshot.forEach(function (doc) {
-
                 complaintsLocal.push(doc.data());
-
                 window.temp = womensafety.slice()
             });
         })
